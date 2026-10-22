@@ -217,7 +217,7 @@ Merged skills appear on [prosyo.com/gtm-skills](https://prosyo.com/gtm-skills/) 
 
 ## For tools and sites
 
-`catalog.json` at the repo root is a machine-readable index of every skill (metadata, rendered HTML, references, install commands). It is rebuilt by CI on every merge with `node tools/build-catalog.mjs`.
+`catalog.json` at the repo root is a machine-readable index of every skill (metadata, rendered HTML, references, install commands). It is rebuilt by CI on every merge with `node tools/build-catalog.mjs`, and `node tools/build-covers.mjs` renders a 1200×630 cover per skill into `assets/covers/` (used as the featured image and social card on the website). Contributors don't need to run it; CI does.
 
 ## License
 

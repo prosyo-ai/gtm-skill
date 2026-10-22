@@ -252,6 +252,9 @@ for (const name of listSkills()) {
     url: `https://github.com/${REPO}/tree/${BRANCH}/${repoPath}`,
     raw_url: `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${repoPath}/SKILL.md`,
     install: `npx skills add ${REPO} --skill ${name}`,
+    cover_url: fs.existsSync(path.join(ROOT, 'assets', 'covers', `${name}.jpg`))
+      ? `https://raw.githubusercontent.com/${REPO}/${BRANCH}/assets/covers/${name}.jpg`
+      : null,
     markdown: raw,
     html: rendered.html,
     headings: rendered.headings,

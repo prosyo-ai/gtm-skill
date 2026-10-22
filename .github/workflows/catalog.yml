@@ -25,15 +25,17 @@ jobs:
         with:
           node-version: 22
       - run: node tools/validate.mjs
+      - name: Render covers for new or changed skills
+        run: node tools/build-covers.mjs
       - run: node tools/build-catalog.mjs
       - name: Commit catalog
         run: |
-          if git diff --quiet -- catalog.json README.md; then
+          if git diff --quiet -- catalog.json README.md assets/covers && [ -z "$(git ls-files --others --exclude-standard assets/covers)" ]; then
             echo "Catalog unchanged"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add catalog.json README.md
-          git commit -m "chore: rebuild catalog [skip ci]"
+          git add catalog.json README.md assets/covers
+          git commit -m "chore: rebuild catalog and covers [skip ci]"
           git push
