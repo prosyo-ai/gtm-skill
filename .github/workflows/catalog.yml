@@ -1,0 +1,39 @@
+name: catalog
+
+# Rebuilds catalog.json and the README table after every merge, so the
+# website and installers always see the latest skills.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'authors/**'
+      - 'tools/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node tools/validate.mjs
+      - run: node tools/build-catalog.mjs
+      - name: Commit catalog
+        run: |
+          if git diff --quiet -- catalog.json README.md; then
+            echo "Catalog unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add catalog.json README.md
+          git commit -m "chore: rebuild catalog [skip ci]"
+          git push

@@ -1,0 +1,86 @@
+[
+  {
+    "slug": "research",
+    "name": "Research & ICP",
+    "headline": "Claude skills for ICP and account research",
+    "description": "Define who you sell to and walk into every conversation knowing more than the competition: ideal customer profiles, personas, account and prospect briefs, competitor teardowns and market sizing."
+  },
+  {
+    "slug": "prospecting",
+    "name": "Prospecting",
+    "headline": "Claude skills for B2B prospecting and list building",
+    "description": "Build lead lists that convert: list criteria, lookalike accounts, account tiers, lead scoring, buying committees and list hygiene before a single message goes out."
+  },
+  {
+    "slug": "signals",
+    "name": "Signals",
+    "headline": "Claude skills for signal-based selling",
+    "description": "Reach buyers when something changed: job changes, hiring, funding, website visits and post engagement, scored and turned into a reason to reach out today."
+  },
+  {
+    "slug": "cold-email",
+    "name": "Cold Email",
+    "headline": "Claude skills for cold email copywriting",
+    "description": "Cold emails people answer: first touches, full sequences, subject lines, personalised first lines, follow-ups, break-up emails and honest copy reviews."
+  },
+  {
+    "slug": "linkedin",
+    "name": "LinkedIn",
+    "headline": "Claude skills for LinkedIn outreach and social selling",
+    "description": "Turn LinkedIn into a pipeline channel: connection notes, message sequences, profile rewrites, posts, comment plays and a daily social selling routine."
+  },
+  {
+    "slug": "multichannel",
+    "name": "Multichannel",
+    "headline": "Claude skills for multichannel outbound",
+    "description": "Coordinate email, LinkedIn, phone and video so every touch builds on the last: cadences, cold call scripts, voicemails and video prospecting."
+  },
+  {
+    "slug": "deliverability",
+    "name": "Deliverability",
+    "headline": "Claude skills for cold email deliverability",
+    "description": "Land in the inbox, not the spam folder: deliverability audits, domain warm-up, SPF, DKIM and DMARC, and safe sending capacity."
+  },
+  {
+    "slug": "replies-meetings",
+    "name": "Replies & Meetings",
+    "headline": "Claude skills for handling replies and booking meetings",
+    "description": "Turn replies into meetings: reply triage, objection handling, booking replies, no-show recovery and discovery call prep."
+  },
+  {
+    "slug": "deals",
+    "name": "Deals & Pipeline",
+    "headline": "Claude skills for deal management and pipeline reviews",
+    "description": "Move deals forward and forecast honestly: qualification, mutual action plans, proposal follow-ups, pipeline reviews, win-loss analysis and closed-lost reactivation."
+  },
+  {
+    "slug": "positioning",
+    "name": "Positioning & Messaging",
+    "headline": "Claude skills for positioning and sales messaging",
+    "description": "Say the thing that makes buyers lean in: value propositions, persona messaging, battlecards and customer stories."
+  },
+  {
+    "slug": "revops",
+    "name": "RevOps & Analytics",
+    "headline": "Claude skills for RevOps and outbound analytics",
+    "description": "Know what is working and what to fix: campaign analysis, outbound experiments, CRM hygiene and the activity math behind a pipeline target."
+  },
+  {
+    "slug": "content-seo",
+    "name": "Content, SEO & AEO",
+    "headline": "Claude skills for B2B content, SEO and AI search",
+    "description": "Get found by buyers and by answer engines: SEO briefs, answers that AI assistants cite, comparison pages and lead magnets."
+  },
+  {
+    "slug": "abm-expansion",
+    "name": "ABM & Expansion",
+    "headline": "Claude skills for ABM, events and account expansion",
+    "description": "Win and grow named accounts: ABM plans, event follow-up, expansion opportunities and referral asks."
+  },
+  {
+    "slug": "enablement",
+    "name": "Enablement & Leadership",
+    "headline": "Claude skills for sales enablement and leadership",
+    "description": "Ramp reps faster and keep every agent on the rails: GTM guardrails, SDR onboarding and call coaching."
+  }
+]

@@ -1,0 +1,17 @@
+name: Request a skill
+description: Suggest a GTM play you'd like to see as a skill.
+title: "[request] <what the skill should do>"
+labels: [skill-request]
+body:
+  - type: textarea
+    id: job
+    attributes:
+      label: What should the skill help with?
+      description: The trigger, the task and the output you'd want.
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: An example request you'd type
+      placeholder: "Write a win-back sequence for customers who churned in the last 6 months"

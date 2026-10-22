@@ -1,0 +1,17 @@
+{
+  "name": "prosyo",
+  "description": "Open-source GTM skills by Prosyo for sales, marketing and RevOps agents.",
+  "owner": {
+    "name": "Prosyo",
+    "url": "https://prosyo.com"
+  },
+  "plugins": [
+    {
+      "name": "gtm-skills",
+      "source": "./",
+      "description": "69 go-to-market skills: research, prospecting, signals, cold email, LinkedIn, deliverability, replies, deals, positioning, RevOps, SEO and AEO.",
+      "category": "sales",
+      "homepage": "https://prosyo.com/gtm-skills/"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+name: Submit a skill
+description: No git? Paste your skill here and a maintainer turns it into a pull request credited to you.
+title: "[skill] <skill-name>"
+labels: [skill-submission]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The fastest path is letting your AI agent submit for you (see the README). Format spec: [AGENTS.md](https://github.com/prosyo-ai/gtm-skill/blob/main/AGENTS.md). Template: [templates/skill/SKILL.md](https://github.com/prosyo-ai/gtm-skill/blob/main/templates/skill/SKILL.md).
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill folder name
+      description: kebab-case. Becomes the permanent install name (npx skills add prosyo-ai/gtm-skill --skill <this>).
+      placeholder: win-back-lost-deals
+    validations:
+      required: true
+  - type: input
+    id: author-slug
+    attributes:
+      label: Your author slug
+      description: kebab-case, e.g. jane-doe. Reuse it if you have contributed before.
+      placeholder: jane-doe
+    validations:
+      required: true
+  - type: textarea
+    id: skill-md
+    attributes:
+      label: SKILL.md
+      description: Full contents including frontmatter.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: Reference pages (optional)
+      description: "Each preceded by a line with its path, e.g. --- references/examples.md ---"
+      render: markdown
+  - type: textarea
+    id: author-md
+    attributes:
+      label: authors/<slug>.md (first contribution only)
+      description: See templates/author.md
+      render: markdown
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmations
+      options:
+        - label: It uses GTM verbs, not vendor names, and has a "What good looks like" section
+          required: true
+        - label: It follows GLOBAL_RULES.md (human approval before sending, no invented facts, no data sent to third parties)
+          required: true
+        - label: I'm fine with MIT licensing, with attribution through my author profile
+          required: true
