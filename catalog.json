@@ -3,14 +3,14 @@
   "repo": "https://github.com/prosyo-ai/gtm-skill",
   "branch": "main",
   "license": "MIT",
-  "count": 69,
+  "count": 77,
   "categories": [
     {
       "slug": "research",
       "name": "Research & ICP",
       "headline": "Claude skills for ICP and account research",
       "description": "Define who you sell to and walk into every conversation knowing more than the competition: ideal customer profiles, personas, account and prospect briefs, competitor teardowns and market sizing.",
-      "count": 6
+      "count": 7
     },
     {
       "slug": "prospecting",
@@ -24,7 +24,7 @@
       "name": "Signals",
       "headline": "Claude skills for signal-based selling",
       "description": "Reach buyers when something changed: job changes, hiring, funding, website visits and post engagement, scored and turned into a reason to reach out today.",
-      "count": 6
+      "count": 7
     },
     {
       "slug": "cold-email",
@@ -52,7 +52,7 @@
       "name": "Deliverability",
       "headline": "Claude skills for cold email deliverability",
       "description": "Land in the inbox, not the spam folder: deliverability audits, domain warm-up, SPF, DKIM and DMARC, and safe sending capacity.",
-      "count": 4
+      "count": 5
     },
     {
       "slug": "replies-meetings",
@@ -66,7 +66,7 @@
       "name": "Deals & Pipeline",
       "headline": "Claude skills for deal management and pipeline reviews",
       "description": "Move deals forward and forecast honestly: qualification, mutual action plans, proposal follow-ups, pipeline reviews, win-loss analysis and closed-lost reactivation.",
-      "count": 6
+      "count": 8
     },
     {
       "slug": "positioning",
@@ -94,14 +94,14 @@
       "name": "ABM & Expansion",
       "headline": "Claude skills for ABM, events and account expansion",
       "description": "Win and grow named accounts: ABM plans, event follow-up, expansion opportunities and referral asks.",
-      "count": 4
+      "count": 6
     },
     {
       "slug": "enablement",
       "name": "Enablement & Leadership",
       "headline": "Claude skills for sales enablement and leadership",
       "description": "Ramp reps faster and keep every agent on the rails: GTM guardrails, SDR onboarding and call coaching.",
-      "count": 3
+      "count": 4
     }
   ],
   "authors": [
@@ -1392,6 +1392,120 @@
       "updated": "2026-10-23T01:49:50+05:30"
     },
     {
+      "name": "churn-win-back",
+      "title": "Churn win-back",
+      "description": "Use this skill when you want former customers back: \"win back churned customers\", \"re-engage cancelled accounts\", \"churn win-back campaign\", \"which lost customers should we call\". Sorts churned accounts by why and when they left, picks the ones worth winning back, finds what changed since (product, pricing, their situation), and writes a short, honest win-back sequence with the right offer for each churn reason. Produces a prioritised win-back list, messages and the rules for when to leave an account alone.",
+      "summary": "Use this for customers who cancelled in the last 3 to 24 months. Former customers already know the product and the problem; the question is whether the reason they left still holds.",
+      "category": "abm-expansion",
+      "category_name": "ABM & Expansion",
+      "tags": [
+        "Customer Success",
+        "Founders",
+        "Sales"
+      ],
+      "keywords": [
+        "win back churned customers",
+        "customer win back email",
+        "re-engage cancelled customers",
+        "claude churn win-back skill",
+        "winback campaign saas"
+      ],
+      "inputs": [
+        "Churned accounts with reason and date",
+        "What changed since",
+        "Usage history"
+      ],
+      "outputs": [
+        "Prioritised win-back list",
+        "Win-back sequence per churn reason",
+        "Leave-alone list"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/churn-win-back",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/churn-win-back",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/churn-win-back/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill churn-win-back",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/churn-win-back.jpg",
+      "markdown": "---\nname: churn-win-back\ndescription: \"Use this skill when you want former customers back: \\\"win back churned customers\\\", \\\"re-engage cancelled accounts\\\", \\\"churn win-back campaign\\\", \\\"which lost customers should we call\\\". Sorts churned accounts by why and when they left, picks the ones worth winning back, finds what changed since (product, pricing, their situation), and writes a short, honest win-back sequence with the right offer for each churn reason. Produces a prioritised win-back list, messages and the rules for when to leave an account alone.\"\nlicense: MIT\nmetadata:\n  title: Churn win-back\n  category: abm-expansion\n  tags: \"Customer Success, Founders, Sales\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"win back churned customers, customer win back email, re-engage cancelled customers, claude churn win-back skill, winback campaign saas\"\n  inputs: \"Churned accounts with reason and date, What changed since, Usage history\"\n  outputs: \"Prioritised win-back list, Win-back sequence per churn reason, Leave-alone list\"\n---\n\nUse this for customers who cancelled in the last 3 to 24 months. Former customers already know the product and the problem; the question is whether the reason they left still holds.\n\n## Inputs\n\n- Churned accounts: churn date, plan and value, the stated reason, who the champion was, usage in the last 90 days before churn.\n- What changed since: features shipped, pricing or packaging changes, support improvements.\n- Current signals at those accounts: new leaders, growth, hiring, funding.\n\n## The play\n\n### 1. Group by real churn reason\n| Reason | Typical evidence | Win-back angle |\n| --- | --- | --- |\n| Missing feature | Ticket or request for it | \"The thing you needed now exists\" |\n| Price or budget | Downgrade attempts, finance involved | New plan, smaller package, annual terms |\n| Low adoption | Few active users, onboarding never finished | Guided restart, done-with-you setup |\n| Champion left | Main user departed before churn | New owner, fresh onboarding |\n| Switched to a competitor | Said so in the exit call | Check in near their contract renewal |\n| Business change | Downsizing, pivot, acquisition | Only if the situation reversed |\n\n### 2. Prioritise\nScore each account: past value, how far they got (active users, outcomes), whether the churn reason is now fixed, and whether a new trigger exists. Start with accounts where the reason is fixed **and** a trigger fired.\n\n### 3. Time it\n- Feature or price reasons: as soon as the fix ships.\n- Competitor switch: 9 to 11 months after churn, ahead of their renewal.\n- Low adoption: 3 to 6 months later, with a new owner if possible.\n\n### 4. Write short and honest\nName the reason they left, say what changed, offer one easy step back. Never pretend the relationship ended well if it did not. Read [references/win-back-messages.md](references/win-back-messages.md) for messages by churn reason.\n\n### 5. Make returning easy\nA clear path: data restored if retained, a short guided restart, a fair price. Ask what would need to be true for it to work this time.\n\n## What good looks like\n\n- Every message names the reason they left and the specific change.\n- Accounts that churned for reasons nothing has fixed are left alone.\n- Returners get an onboarding plan, so they do not churn twice for the same reason.\n- The common mistake is a blanket \"We miss you! Here's 20% off\" email to every former customer, which ignores why they left and trains people to churn for discounts.\n\n## Rules\n\n- MUST check the churn reason before writing.\n- MUST respect opt-outs and data-retention promises made at cancellation.\n- NEVER claim a fix that has not shipped.\n- NEVER discount by default; match the offer to the reason.\n\n## Example prompts\n\n- \"Here are 85 accounts that churned last year with reasons. Who should we win back and how?\"\n- \"We just shipped the integration 12 churned customers asked for. Write the win-back emails.\"\n- \"Plan a quarterly win-back play for customers who left for a competitor.\"\n",
+      "html": "<p>Use this for customers who cancelled in the last 3 to 24 months. Former customers already know the product and the problem; the question is whether the reason they left still holds.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Churned accounts: churn date, plan and value, the stated reason, who the champion was, usage in the last 90 days before churn.</li><li>What changed since: features shipped, pricing or packaging changes, support improvements.</li><li>Current signals at those accounts: new leaders, growth, hiring, funding.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-group-by-real-churn-reason\">1. Group by real churn reason</h3>\n<div class=\"md-table\"><table><thead><tr><th>Reason</th><th>Typical evidence</th><th>Win-back angle</th></tr></thead><tbody><tr><td>Missing feature</td><td>Ticket or request for it</td><td>&quot;The thing you needed now exists&quot;</td></tr><tr><td>Price or budget</td><td>Downgrade attempts, finance involved</td><td>New plan, smaller package, annual terms</td></tr><tr><td>Low adoption</td><td>Few active users, onboarding never finished</td><td>Guided restart, done-with-you setup</td></tr><tr><td>Champion left</td><td>Main user departed before churn</td><td>New owner, fresh onboarding</td></tr><tr><td>Switched to a competitor</td><td>Said so in the exit call</td><td>Check in near their contract renewal</td></tr><tr><td>Business change</td><td>Downsizing, pivot, acquisition</td><td>Only if the situation reversed</td></tr></tbody></table></div>\n<h3 id=\"2-prioritise\">2. Prioritise</h3>\n<p>Score each account: past value, how far they got (active users, outcomes), whether the churn reason is now fixed, and whether a new trigger exists. Start with accounts where the reason is fixed <strong>and</strong> a trigger fired.</p>\n<h3 id=\"3-time-it\">3. Time it</h3>\n<ul><li>Feature or price reasons: as soon as the fix ships.</li><li>Competitor switch: 9 to 11 months after churn, ahead of their renewal.</li><li>Low adoption: 3 to 6 months later, with a new owner if possible.</li></ul>\n<h3 id=\"4-write-short-and-honest\">4. Write short and honest</h3>\n<p>Name the reason they left, say what changed, offer one easy step back. Never pretend the relationship ended well if it did not. Read <a href=\"https://github.com/prosyo-ai/gtm-skill/blob/main/skills/churn-win-back/references/win-back-messages.md\">references/win-back-messages.md</a> for messages by churn reason.</p>\n<h3 id=\"5-make-returning-easy\">5. Make returning easy</h3>\n<p>A clear path: data restored if retained, a short guided restart, a fair price. Ask what would need to be true for it to work this time.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>Every message names the reason they left and the specific change.</li><li>Accounts that churned for reasons nothing has fixed are left alone.</li><li>Returners get an onboarding plan, so they do not churn twice for the same reason.</li><li>The common mistake is a blanket &quot;We miss you! Here's 20% off&quot; email to every former customer, which ignores why they left and trains people to churn for discounts.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST check the churn reason before writing.</li><li>MUST respect opt-outs and data-retention promises made at cancellation.</li><li>NEVER claim a fix that has not shipped.</li><li>NEVER discount by default; match the offer to the reason.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Here are 85 accounts that churned last year with reasons. Who should we win back and how?&quot;</li><li>&quot;We just shipped the integration 12 churned customers asked for. Write the win-back emails.&quot;</li><li>&quot;Plan a quarterly win-back play for customers who left for a competitor.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-group-by-real-churn-reason",
+          "text": "1. Group by real churn reason"
+        },
+        {
+          "level": 3,
+          "id": "2-prioritise",
+          "text": "2. Prioritise"
+        },
+        {
+          "level": 3,
+          "id": "3-time-it",
+          "text": "3. Time it"
+        },
+        {
+          "level": 3,
+          "id": "4-write-short-and-honest",
+          "text": "4. Write short and honest"
+        },
+        {
+          "level": 3,
+          "id": "5-make-returning-easy",
+          "text": "5. Make returning easy"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Here are 85 accounts that churned last year with reasons. Who should we win back and how?",
+        "We just shipped the integration 12 churned customers asked for. Write the win-back emails.",
+        "Plan a quarterly win-back play for customers who left for a competitor."
+      ],
+      "references": [
+        {
+          "file": "references/win-back-messages.md",
+          "title": "Win-back messages by churn reason",
+          "markdown": "# Win-back messages by churn reason\n\n## Missing feature, now shipped\n\n> Subject: the multi-entity piece\n>\n> Hi Priya, when Lumen left in March, multi-entity reporting was the reason. It went live this month, and Contoso runs four entities on it. Your old workspace is still there if you want to look. Worth 15 minutes to see if it covers what you needed?\n\n## Price or budget\n\n> Hi Tom, budget was the reason you paused last year. We now have a smaller plan built for teams of three to five, at about half of what you were paying. If the problem is still there, want me to send the numbers for your team size?\n\n## Low adoption\n\n> Hi Ana, honestly, we did not set you up well last time: only two people ever got going. If you want another run, we'll do the setup with you in one session and agree up front what success looks like after 30 days. Interested?\n\n## Champion left before churn\n\n> Hi Dev, you're now running ops at Northwind, and I know the tool left with Priya last year. Happy to give you a short, no-pressure look at what it did for her team, in case it is useful for yours.\n\n## Switched to a competitor (near their renewal)\n\n> Hi Maya, it has been about a year since Lumen moved to Rotaflow. Renewal time is usually when teams compare notes. If anything is not working, I'm glad to share what changed on our side. If it is all going well, no reply needed.\n\n## Follow-up (one only)\n\n> Hi Priya, closing the loop on my note last week. If now is not the time, reply \"later\" and I will check back in six months.\n\n## Leave alone when\n\n- They churned for a reason nothing has fixed.\n- They asked not to be contacted.\n- The company shut down, was acquired into a customer, or no longer fits the ICP.\n- They churned in the last 60 days for any reason other than a since-fixed gap.\n",
+          "html": "<h2 id=\"missing-feature-now-shipped\">Missing feature, now shipped</h2>\n<blockquote><p>Subject: the multi-entity piece</p>\n<p>Hi Priya, when Lumen left in March, multi-entity reporting was the reason. It went live this month, and Contoso runs four entities on it. Your old workspace is still there if you want to look. Worth 15 minutes to see if it covers what you needed?</p>\n</blockquote>\n<h2 id=\"price-or-budget\">Price or budget</h2>\n<blockquote><p>Hi Tom, budget was the reason you paused last year. We now have a smaller plan built for teams of three to five, at about half of what you were paying. If the problem is still there, want me to send the numbers for your team size?</p>\n</blockquote>\n<h2 id=\"low-adoption\">Low adoption</h2>\n<blockquote><p>Hi Ana, honestly, we did not set you up well last time: only two people ever got going. If you want another run, we'll do the setup with you in one session and agree up front what success looks like after 30 days. Interested?</p>\n</blockquote>\n<h2 id=\"champion-left-before-churn\">Champion left before churn</h2>\n<blockquote><p>Hi Dev, you're now running ops at Northwind, and I know the tool left with Priya last year. Happy to give you a short, no-pressure look at what it did for her team, in case it is useful for yours.</p>\n</blockquote>\n<h2 id=\"switched-to-a-competitor-near-their-renewal\">Switched to a competitor (near their renewal)</h2>\n<blockquote><p>Hi Maya, it has been about a year since Lumen moved to Rotaflow. Renewal time is usually when teams compare notes. If anything is not working, I'm glad to share what changed on our side. If it is all going well, no reply needed.</p>\n</blockquote>\n<h2 id=\"follow-up-one-only\">Follow-up (one only)</h2>\n<blockquote><p>Hi Priya, closing the loop on my note last week. If now is not the time, reply &quot;later&quot; and I will check back in six months.</p>\n</blockquote>\n<h2 id=\"leave-alone-when\">Leave alone when</h2>\n<ul><li>They churned for a reason nothing has fixed.</li><li>They asked not to be contacted.</li><li>The company shut down, was acquired into a customer, or no longer fits the ICP.</li><li>They churned in the last 60 days for any reason other than a since-fixed gap.</li></ul>\n",
+          "words": 332
+        }
+      ],
+      "words": 802,
+      "updated": null
+    },
+    {
       "name": "closed-lost-reactivation",
       "title": "Closed-lost reactivation",
       "description": "Use this skill when you want to revive closed-lost deals and old opportunities: \"re-engage lost deals\", \"win back closed lost opportunities\", \"reactivation campaign\", \"which lost deals should we try again\". Filters lost deals by reason and time since loss, checks for new triggers, picks the ones worth reopening, and writes reactivation messages that reference what changed (on their side or yours) instead of repeating the old pitch. Often the cheapest pipeline a team can create.",
@@ -2313,6 +2427,121 @@
       "references": [],
       "words": 369,
       "updated": "2026-10-23T01:49:50+05:30"
+    },
+    {
+      "name": "customer-interview-guide",
+      "title": "Customer interview guide",
+      "description": "Use this skill when you want to learn from customers or prospects in a structured interview: \"write customer interview questions\", \"voice of customer research\", \"why did customers buy\", \"jobs to be done interviews\". Plans who to interview, writes a guide that uncovers the buying story (the trigger, the alternatives, the decision, the outcome) without leading questions, and turns the transcripts into themes, buyer language and changes for messaging, ICP and product. Produces an interview guide, a recruit message and a synthesis template.",
+      "summary": "Use this when messaging, ICP or roadmap decisions rest on guesses. Ten good interviews with recent buyers usually reveal more than a hundred survey responses.",
+      "category": "research",
+      "category_name": "Research & ICP",
+      "tags": [
+        "Founders",
+        "Marketing",
+        "Sales Leaders",
+        "Customer Success"
+      ],
+      "keywords": [
+        "customer interview questions b2b",
+        "voice of customer research",
+        "jobs to be done interview guide",
+        "claude customer research skill",
+        "buyer interviews"
+      ],
+      "inputs": [
+        "What you want to learn",
+        "Customers or prospects to interview",
+        "Product and ICP"
+      ],
+      "outputs": [
+        "Interview guide",
+        "Recruit message",
+        "Synthesis of themes and buyer language"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/customer-interview-guide",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/customer-interview-guide",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/customer-interview-guide/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill customer-interview-guide",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/customer-interview-guide.jpg",
+      "markdown": "---\nname: customer-interview-guide\ndescription: \"Use this skill when you want to learn from customers or prospects in a structured interview: \\\"write customer interview questions\\\", \\\"voice of customer research\\\", \\\"why did customers buy\\\", \\\"jobs to be done interviews\\\". Plans who to interview, writes a guide that uncovers the buying story (the trigger, the alternatives, the decision, the outcome) without leading questions, and turns the transcripts into themes, buyer language and changes for messaging, ICP and product. Produces an interview guide, a recruit message and a synthesis template.\"\nlicense: MIT\nmetadata:\n  title: Customer interview guide\n  category: research\n  tags: \"Founders, Marketing, Sales Leaders, Customer Success\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"customer interview questions b2b, voice of customer research, jobs to be done interview guide, claude customer research skill, buyer interviews\"\n  inputs: \"What you want to learn, Customers or prospects to interview, Product and ICP\"\n  outputs: \"Interview guide, Recruit message, Synthesis of themes and buyer language\"\n---\n\nUse this when messaging, ICP or roadmap decisions rest on guesses. Ten good interviews with recent buyers usually reveal more than a hundred survey responses.\n\n## Inputs\n\n- The decision the research should inform (positioning, ICP, pricing, a feature).\n- Who to talk to: recent buyers (last 90 days) are best; also recent churns and lost deals.\n- What you already believe, written down, so you can test it.\n\n## The play\n\n### 1. Recruit the right people\nRecent buyers remember the story. Aim for 8 to 12 interviews across segments. Recruit with a short, honest ask:\n\n> Hi Maya, you started with us last month. Could I ask you 20 minutes of questions about how you decided? No sales pitch, just learning. As thanks, <a small, appropriate gesture>.\n\n### 2. Ask about the story, not opinions\nFollow the timeline of the purchase:\n1. **Before**: \"What were you doing before? What was annoying about it?\"\n2. **Trigger**: \"What happened that made you start looking then?\"\n3. **Search**: \"What else did you look at? What did you almost choose?\"\n4. **Decision**: \"What made you pick this? Who else had a say? What almost stopped it?\"\n5. **After**: \"What's different now? What would you miss if it disappeared?\"\n\nRead [references/interview-guide.md](references/interview-guide.md) for the full guide with follow-ups and the synthesis template.\n\n### 3. Avoid leading questions\nNot \"Would you say our reporting saved you time?\" but \"What happened the last time you needed a report?\" Ask for specific past events, not hypothetical future behaviour.\n\n### 4. Capture the exact words\nRecord (with permission) and pull verbatim quotes. The buyer's phrases are the raw material for headlines, emails and battlecards.\n\n### 5. Synthesise into decisions\nGroup findings into triggers, alternatives, decision criteria, objections and outcomes. A theme needs 3+ interviews. Each theme ends with a recommended change.\n\n## What good looks like\n\n- Interviewees do most of the talking and tell stories with specific moments.\n- The synthesis includes surprises, not just confirmation.\n- Buyer phrases end up in the next round of copy.\n- The common mistake is turning the interview into a demo or a satisfaction survey, which produces polite praise and no insight.\n\n## Rules\n\n- MUST get permission before recording and anonymise quotes unless the person agrees otherwise.\n- MUST ask about past events, not hypothetical opinions.\n- NEVER sell during a research interview.\n- NEVER present a single interview as a pattern.\n\n## Example prompts\n\n- \"Write a customer interview guide to find out why our last 20 customers bought.\"\n- \"Here are 9 interview transcripts. Synthesise themes and buyer language for our homepage.\"\n- \"Write a recruit email for interviews with customers who churned last quarter.\"\n",
+      "html": "<p>Use this when messaging, ICP or roadmap decisions rest on guesses. Ten good interviews with recent buyers usually reveal more than a hundred survey responses.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>The decision the research should inform (positioning, ICP, pricing, a feature).</li><li>Who to talk to: recent buyers (last 90 days) are best; also recent churns and lost deals.</li><li>What you already believe, written down, so you can test it.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-recruit-the-right-people\">1. Recruit the right people</h3>\n<p>Recent buyers remember the story. Aim for 8 to 12 interviews across segments. Recruit with a short, honest ask:</p>\n<blockquote><p>Hi Maya, you started with us last month. Could I ask you 20 minutes of questions about how you decided? No sales pitch, just learning. As thanks, &lt;a small, appropriate gesture&gt;.</p>\n</blockquote>\n<h3 id=\"2-ask-about-the-story-not-opinions\">2. Ask about the story, not opinions</h3>\n<p>Follow the timeline of the purchase:</p>\n<ol><li><strong>Before</strong>: &quot;What were you doing before? What was annoying about it?&quot;</li><li><strong>Trigger</strong>: &quot;What happened that made you start looking then?&quot;</li><li><strong>Search</strong>: &quot;What else did you look at? What did you almost choose?&quot;</li><li><strong>Decision</strong>: &quot;What made you pick this? Who else had a say? What almost stopped it?&quot;</li><li><strong>After</strong>: &quot;What's different now? What would you miss if it disappeared?&quot;</li></ol>\n<p>Read <a href=\"https://github.com/prosyo-ai/gtm-skill/blob/main/skills/customer-interview-guide/references/interview-guide.md\">references/interview-guide.md</a> for the full guide with follow-ups and the synthesis template.</p>\n<h3 id=\"3-avoid-leading-questions\">3. Avoid leading questions</h3>\n<p>Not &quot;Would you say our reporting saved you time?&quot; but &quot;What happened the last time you needed a report?&quot; Ask for specific past events, not hypothetical future behaviour.</p>\n<h3 id=\"4-capture-the-exact-words\">4. Capture the exact words</h3>\n<p>Record (with permission) and pull verbatim quotes. The buyer's phrases are the raw material for headlines, emails and battlecards.</p>\n<h3 id=\"5-synthesise-into-decisions\">5. Synthesise into decisions</h3>\n<p>Group findings into triggers, alternatives, decision criteria, objections and outcomes. A theme needs 3+ interviews. Each theme ends with a recommended change.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>Interviewees do most of the talking and tell stories with specific moments.</li><li>The synthesis includes surprises, not just confirmation.</li><li>Buyer phrases end up in the next round of copy.</li><li>The common mistake is turning the interview into a demo or a satisfaction survey, which produces polite praise and no insight.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST get permission before recording and anonymise quotes unless the person agrees otherwise.</li><li>MUST ask about past events, not hypothetical opinions.</li><li>NEVER sell during a research interview.</li><li>NEVER present a single interview as a pattern.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Write a customer interview guide to find out why our last 20 customers bought.&quot;</li><li>&quot;Here are 9 interview transcripts. Synthesise themes and buyer language for our homepage.&quot;</li><li>&quot;Write a recruit email for interviews with customers who churned last quarter.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-recruit-the-right-people",
+          "text": "1. Recruit the right people"
+        },
+        {
+          "level": 3,
+          "id": "2-ask-about-the-story-not-opinions",
+          "text": "2. Ask about the story, not opinions"
+        },
+        {
+          "level": 3,
+          "id": "3-avoid-leading-questions",
+          "text": "3. Avoid leading questions"
+        },
+        {
+          "level": 3,
+          "id": "4-capture-the-exact-words",
+          "text": "4. Capture the exact words"
+        },
+        {
+          "level": 3,
+          "id": "5-synthesise-into-decisions",
+          "text": "5. Synthesise into decisions"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Write a customer interview guide to find out why our last 20 customers bought.",
+        "Here are 9 interview transcripts. Synthesise themes and buyer language for our homepage.",
+        "Write a recruit email for interviews with customers who churned last quarter."
+      ],
+      "references": [
+        {
+          "file": "references/interview-guide.md",
+          "title": "Interview guide and synthesis template",
+          "markdown": "# Interview guide and synthesis template\n\n## Opening (2 min)\n\n\"Thanks for making time. I'm not selling anything today; I want to understand how you made the decision, including the messy parts. Mind if I record so I can listen instead of taking notes?\"\n\n## Before (5 min)\n- Walk me through how you handled <job> before.\n- What was the most frustrating part? When did that last happen?\n- What did it cost you: time, money, missed targets?\n\n## Trigger (4 min)\n- What happened that made you start looking for something new then, not six months earlier?\n- Who first raised it?\n\n## Search (4 min)\n- What options did you consider, including doing nothing or building it yourselves?\n- What did you like and dislike about each?\n- What almost made you choose differently?\n\n## Decision (4 min)\n- Who was involved? Who had to say yes?\n- What questions or worries came up internally?\n- What made you confident enough to go ahead?\n\n## After (4 min)\n- What's different now? Can you give me a recent example?\n- If it disappeared tomorrow, what would you do?\n- How would you describe it to a peer?\n\n## Follow-ups to use often\n- \"Tell me more about that.\"\n- \"What do you mean by <their word>?\"\n- \"When was the last time that happened?\"\n- \"And then what?\"\n\n## Synthesis template\n\n| Theme | Interviews (n) | Representative quote | What it means | Recommended change |\n| --- | --- | --- | --- | --- |\n| Trigger: new leader asks for forecast accuracy | 5 | \"My new VP wanted numbers I couldn't trust.\" | Timing play around new sales leaders | Add new-leader trigger to outbound |\n| Alternative: spreadsheets, not competitors | 7 | \"Honestly we compared you to our spreadsheet.\" | Position against the spreadsheet | Rewrite homepage subhead |\n\nAlso capture:\n- **Buyer phrases** worth reusing verbatim.\n- **Surprises** that contradict current beliefs.\n- **Objections** raised internally, and what answered them.\n",
+          "html": "<h2 id=\"opening-2-min\">Opening (2 min)</h2>\n<p>&quot;Thanks for making time. I'm not selling anything today; I want to understand how you made the decision, including the messy parts. Mind if I record so I can listen instead of taking notes?&quot;</p>\n<h2 id=\"before-5-min\">Before (5 min)</h2>\n<ul><li>Walk me through how you handled &lt;job&gt; before.</li><li>What was the most frustrating part? When did that last happen?</li><li>What did it cost you: time, money, missed targets?</li></ul>\n<h2 id=\"trigger-4-min\">Trigger (4 min)</h2>\n<ul><li>What happened that made you start looking for something new then, not six months earlier?</li><li>Who first raised it?</li></ul>\n<h2 id=\"search-4-min\">Search (4 min)</h2>\n<ul><li>What options did you consider, including doing nothing or building it yourselves?</li><li>What did you like and dislike about each?</li><li>What almost made you choose differently?</li></ul>\n<h2 id=\"decision-4-min\">Decision (4 min)</h2>\n<ul><li>Who was involved? Who had to say yes?</li><li>What questions or worries came up internally?</li><li>What made you confident enough to go ahead?</li></ul>\n<h2 id=\"after-4-min\">After (4 min)</h2>\n<ul><li>What's different now? Can you give me a recent example?</li><li>If it disappeared tomorrow, what would you do?</li><li>How would you describe it to a peer?</li></ul>\n<h2 id=\"follow-ups-to-use-often\">Follow-ups to use often</h2>\n<ul><li>&quot;Tell me more about that.&quot;</li><li>&quot;What do you mean by &lt;their word&gt;?&quot;</li><li>&quot;When was the last time that happened?&quot;</li><li>&quot;And then what?&quot;</li></ul>\n<h2 id=\"synthesis-template\">Synthesis template</h2>\n<div class=\"md-table\"><table><thead><tr><th>Theme</th><th>Interviews (n)</th><th>Representative quote</th><th>What it means</th><th>Recommended change</th></tr></thead><tbody><tr><td>Trigger: new leader asks for forecast accuracy</td><td>5</td><td>&quot;My new VP wanted numbers I couldn't trust.&quot;</td><td>Timing play around new sales leaders</td><td>Add new-leader trigger to outbound</td></tr><tr><td>Alternative: spreadsheets, not competitors</td><td>7</td><td>&quot;Honestly we compared you to our spreadsheet.&quot;</td><td>Position against the spreadsheet</td><td>Rewrite homepage subhead</td></tr></tbody></table></div>\n<p>Also capture:</p>\n<ul><li><strong>Buyer phrases</strong> worth reusing verbatim.</li><li><strong>Surprises</strong> that contradict current beliefs.</li><li><strong>Objections</strong> raised internally, and what answered them.</li></ul>\n",
+          "words": 285
+        }
+      ],
+      "words": 719,
+      "updated": null
     },
     {
       "name": "deal-qualification",
@@ -5652,6 +5881,126 @@
       "updated": "2026-10-23T01:49:50+05:30"
     },
     {
+      "name": "negotiation-playbook",
+      "title": "Negotiation playbook",
+      "description": "Use this skill when a B2B deal reaches pricing, discount or contract negotiation: \"they want 30% off\", \"procurement is pushing back\", \"how do I negotiate this renewal\", \"prepare for the negotiation call\". Sets your walk-away and target, maps what each side values, plans the trades (give only to get), scripts responses to the common pressure tactics, and keeps the deal value intact. Produces a negotiation plan, a give-get list and the talk track for the call.",
+      "summary": "Use this when the buyer starts negotiating. The goal is a deal both sides are glad they signed, without giving away value for nothing.",
+      "category": "deals",
+      "category_name": "Deals & Pipeline",
+      "tags": [
+        "Sales",
+        "Sales Leaders",
+        "Founders"
+      ],
+      "keywords": [
+        "sales negotiation playbook",
+        "how to handle discount requests",
+        "b2b contract negotiation",
+        "claude negotiation skill",
+        "procurement negotiation"
+      ],
+      "inputs": [
+        "Deal value and proposal",
+        "Buyer's ask",
+        "Your limits and approvals"
+      ],
+      "outputs": [
+        "Negotiation plan",
+        "Give-get trade list",
+        "Talk track",
+        "Approval summary"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/negotiation-playbook",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/negotiation-playbook",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/negotiation-playbook/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill negotiation-playbook",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/negotiation-playbook.jpg",
+      "markdown": "---\nname: negotiation-playbook\ndescription: \"Use this skill when a B2B deal reaches pricing, discount or contract negotiation: \\\"they want 30% off\\\", \\\"procurement is pushing back\\\", \\\"how do I negotiate this renewal\\\", \\\"prepare for the negotiation call\\\". Sets your walk-away and target, maps what each side values, plans the trades (give only to get), scripts responses to the common pressure tactics, and keeps the deal value intact. Produces a negotiation plan, a give-get list and the talk track for the call.\"\nlicense: MIT\nmetadata:\n  title: Negotiation playbook\n  category: deals\n  tags: \"Sales, Sales Leaders, Founders\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"sales negotiation playbook, how to handle discount requests, b2b contract negotiation, claude negotiation skill, procurement negotiation\"\n  inputs: \"Deal value and proposal, Buyer's ask, Your limits and approvals\"\n  outputs: \"Negotiation plan, Give-get trade list, Talk track, Approval summary\"\n---\n\nUse this when the buyer starts negotiating. The goal is a deal both sides are glad they signed, without giving away value for nothing.\n\n## Inputs\n\n- The proposal: price, term, scope, payment terms.\n- What the buyer asked for, in their words, and who asked (champion, buyer, procurement).\n- Your limits: list price, approved discount bands, who approves exceptions, any end-of-period pressure.\n\n## The play\n\n### 1. Set three numbers before the call\n- **Target**: the outcome you aim for.\n- **Walk-away**: below this, you would rather not sign.\n- **Opening position**: usually the proposal as sent.\n\n### 2. Map what each side values\n| You can give | They might value | You want back |\n| --- | --- | --- |\n| Discount on year one | Lower first-year spend | Longer term (2-3 years) |\n| Extra seats or usage | Room to grow | Annual prepayment |\n| Faster onboarding | Speed to value | Signature by a date tied to their go-live |\n| Payment terms | Cash flow | Case study or reference |\n| Price lock | Budget certainty | Expanded scope |\n\nRead [references/give-get-scripts.md](references/give-get-scripts.md) for the trade scripts and responses to common pressure tactics.\n\n### 3. Trade, never give\nEvery concession is conditional: \"If we can do X, can you do Y?\" A discount without something in return teaches the buyer to ask again.\n\n### 4. Concede slowly and in shrinking steps\nFor example: 10%, then 5%, then 2%. Shrinking steps signal you are near your limit; equal steps invite more asking.\n\n### 5. Keep value, not just price, on the table\nReturn to the outcome: \"Your team saves five days a month. At your volumes, that's about $480k a year.\"\n\n### 6. Summarise in writing\nAfter every call: what was agreed, what is open, the next step and date.\n\n## What good looks like\n\n- No concession is made without a trade.\n- The final price is within approved bands, or the exception is approved before it is offered.\n- The buyer leaves feeling it was fair, not squeezed.\n- The common mistake is cutting the price at the first \"it's too expensive\" before finding out whether price is the real issue.\n\n## Rules\n\n- MUST get approval before offering anything outside approved bands.\n- MUST tie every concession to something in return.\n- NEVER invent competing offers, fake deadlines or price rises to create pressure.\n- NEVER agree to terms legal or finance have not reviewed.\n\n## Example prompts\n\n- \"Procurement wants 25% off our $80k proposal. Build my negotiation plan.\"\n- \"Write responses to 'your competitor is half the price' and 'we need it cheaper to get budget approval'.\"\n- \"Our renewal customer wants to drop to 10 seats. How do we negotiate this?\"\n",
+      "html": "<p>Use this when the buyer starts negotiating. The goal is a deal both sides are glad they signed, without giving away value for nothing.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>The proposal: price, term, scope, payment terms.</li><li>What the buyer asked for, in their words, and who asked (champion, buyer, procurement).</li><li>Your limits: list price, approved discount bands, who approves exceptions, any end-of-period pressure.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-set-three-numbers-before-the-call\">1. Set three numbers before the call</h3>\n<ul><li><strong>Target</strong>: the outcome you aim for.</li><li><strong>Walk-away</strong>: below this, you would rather not sign.</li><li><strong>Opening position</strong>: usually the proposal as sent.</li></ul>\n<h3 id=\"2-map-what-each-side-values\">2. Map what each side values</h3>\n<div class=\"md-table\"><table><thead><tr><th>You can give</th><th>They might value</th><th>You want back</th></tr></thead><tbody><tr><td>Discount on year one</td><td>Lower first-year spend</td><td>Longer term (2-3 years)</td></tr><tr><td>Extra seats or usage</td><td>Room to grow</td><td>Annual prepayment</td></tr><tr><td>Faster onboarding</td><td>Speed to value</td><td>Signature by a date tied to their go-live</td></tr><tr><td>Payment terms</td><td>Cash flow</td><td>Case study or reference</td></tr><tr><td>Price lock</td><td>Budget certainty</td><td>Expanded scope</td></tr></tbody></table></div>\n<p>Read <a href=\"https://github.com/prosyo-ai/gtm-skill/blob/main/skills/negotiation-playbook/references/give-get-scripts.md\">references/give-get-scripts.md</a> for the trade scripts and responses to common pressure tactics.</p>\n<h3 id=\"3-trade-never-give\">3. Trade, never give</h3>\n<p>Every concession is conditional: &quot;If we can do X, can you do Y?&quot; A discount without something in return teaches the buyer to ask again.</p>\n<h3 id=\"4-concede-slowly-and-in-shrinking-steps\">4. Concede slowly and in shrinking steps</h3>\n<p>For example: 10%, then 5%, then 2%. Shrinking steps signal you are near your limit; equal steps invite more asking.</p>\n<h3 id=\"5-keep-value-not-just-price-on-the-table\">5. Keep value, not just price, on the table</h3>\n<p>Return to the outcome: &quot;Your team saves five days a month. At your volumes, that's about $480k a year.&quot;</p>\n<h3 id=\"6-summarise-in-writing\">6. Summarise in writing</h3>\n<p>After every call: what was agreed, what is open, the next step and date.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>No concession is made without a trade.</li><li>The final price is within approved bands, or the exception is approved before it is offered.</li><li>The buyer leaves feeling it was fair, not squeezed.</li><li>The common mistake is cutting the price at the first &quot;it's too expensive&quot; before finding out whether price is the real issue.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST get approval before offering anything outside approved bands.</li><li>MUST tie every concession to something in return.</li><li>NEVER invent competing offers, fake deadlines or price rises to create pressure.</li><li>NEVER agree to terms legal or finance have not reviewed.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Procurement wants 25% off our $80k proposal. Build my negotiation plan.&quot;</li><li>&quot;Write responses to 'your competitor is half the price' and 'we need it cheaper to get budget approval'.&quot;</li><li>&quot;Our renewal customer wants to drop to 10 seats. How do we negotiate this?&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-set-three-numbers-before-the-call",
+          "text": "1. Set three numbers before the call"
+        },
+        {
+          "level": 3,
+          "id": "2-map-what-each-side-values",
+          "text": "2. Map what each side values"
+        },
+        {
+          "level": 3,
+          "id": "3-trade-never-give",
+          "text": "3. Trade, never give"
+        },
+        {
+          "level": 3,
+          "id": "4-concede-slowly-and-in-shrinking-steps",
+          "text": "4. Concede slowly and in shrinking steps"
+        },
+        {
+          "level": 3,
+          "id": "5-keep-value-not-just-price-on-the-table",
+          "text": "5. Keep value, not just price, on the table"
+        },
+        {
+          "level": 3,
+          "id": "6-summarise-in-writing",
+          "text": "6. Summarise in writing"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Procurement wants 25% off our $80k proposal. Build my negotiation plan.",
+        "Write responses to 'your competitor is half the price' and 'we need it cheaper to get budget approval'.",
+        "Our renewal customer wants to drop to 10 seats. How do we negotiate this?"
+      ],
+      "references": [
+        {
+          "file": "references/give-get-scripts.md",
+          "title": "Give-get scripts and pressure tactics",
+          "markdown": "# Give-get scripts and pressure tactics\n\n## Conditional trades\n\n- \"If we can get to that number, can you commit to two years?\"\n- \"I can include the extra seats if we can sign by the 28th so your team starts on the 1st.\"\n- \"We could move to quarterly payments if the term is annual.\"\n- \"If price is the blocker, we could start with the core team and add the rest in Q3 at today's rate.\"\n\n## Pressure tactics and responses\n\n| Tactic | Response |\n| --- | --- |\n| \"Your competitor is half the price.\" | \"They may be. Can we compare what's included line by line? If they're a better fit, I'll say so.\" |\n| \"We need 30% off or no deal.\" | \"Help me understand what the 30% solves: budget this year, or total cost? There may be a better way to get there.\" |\n| \"Procurement requires a discount.\" | \"Understood. What else does procurement value: term, payment schedule, a case study? Let's find the trade.\" |\n| \"Sign today and we'll do it.\" (they want a last-minute cut) | \"I'd rather get it right than rushed. What would make this a clear yes?\" |\n| Silence after your number | Wait. Don't fill it with a lower number. |\n| \"Send your best and final.\" | \"Here's the best version of the proposal. If something specific blocks a yes, tell me and I'll see what can move.\" |\n| Bringing a new decision-maker at the end | Restate the agreed value and outcomes before discussing price again. |\n\n## Concession pattern\n\n| Step | Example |\n| --- | --- |\n| First | 10% for a two-year term |\n| Second | 5% more for annual prepay |\n| Third | 2% for signature by a date tied to their go-live |\n| Then | Hold. Offer non-price items (onboarding, training) if anything |\n\n## Written summary template\n\n```\nAgreed: <price, term, scope, payment>\nOpen: <items, owner, date>\nConditions: <what each concession depends on>\nNext step: <who, what, when>\n```\n",
+          "html": "<h2 id=\"conditional-trades\">Conditional trades</h2>\n<ul><li>&quot;If we can get to that number, can you commit to two years?&quot;</li><li>&quot;I can include the extra seats if we can sign by the 28th so your team starts on the 1st.&quot;</li><li>&quot;We could move to quarterly payments if the term is annual.&quot;</li><li>&quot;If price is the blocker, we could start with the core team and add the rest in Q3 at today's rate.&quot;</li></ul>\n<h2 id=\"pressure-tactics-and-responses\">Pressure tactics and responses</h2>\n<div class=\"md-table\"><table><thead><tr><th>Tactic</th><th>Response</th></tr></thead><tbody><tr><td>&quot;Your competitor is half the price.&quot;</td><td>&quot;They may be. Can we compare what's included line by line? If they're a better fit, I'll say so.&quot;</td></tr><tr><td>&quot;We need 30% off or no deal.&quot;</td><td>&quot;Help me understand what the 30% solves: budget this year, or total cost? There may be a better way to get there.&quot;</td></tr><tr><td>&quot;Procurement requires a discount.&quot;</td><td>&quot;Understood. What else does procurement value: term, payment schedule, a case study? Let's find the trade.&quot;</td></tr><tr><td>&quot;Sign today and we'll do it.&quot; (they want a last-minute cut)</td><td>&quot;I'd rather get it right than rushed. What would make this a clear yes?&quot;</td></tr><tr><td>Silence after your number</td><td>Wait. Don't fill it with a lower number.</td></tr><tr><td>&quot;Send your best and final.&quot;</td><td>&quot;Here's the best version of the proposal. If something specific blocks a yes, tell me and I'll see what can move.&quot;</td></tr><tr><td>Bringing a new decision-maker at the end</td><td>Restate the agreed value and outcomes before discussing price again.</td></tr></tbody></table></div>\n<h2 id=\"concession-pattern\">Concession pattern</h2>\n<div class=\"md-table\"><table><thead><tr><th>Step</th><th>Example</th></tr></thead><tbody><tr><td>First</td><td>10% for a two-year term</td></tr><tr><td>Second</td><td>5% more for annual prepay</td></tr><tr><td>Third</td><td>2% for signature by a date tied to their go-live</td></tr><tr><td>Then</td><td>Hold. Offer non-price items (onboarding, training) if anything</td></tr></tbody></table></div>\n<h2 id=\"written-summary-template\">Written summary template</h2>\n<pre><code>Agreed: &lt;price, term, scope, payment&gt;\nOpen: &lt;items, owner, date&gt;\nConditions: &lt;what each concession depends on&gt;\nNext step: &lt;who, what, when&gt;</code></pre>\n",
+          "words": 277
+        }
+      ],
+      "words": 700,
+      "updated": null
+    },
+    {
       "name": "no-show-recovery",
       "title": "No-show recovery",
       "description": "Use this skill when a prospect misses a booked meeting or keeps rescheduling: \"they didn't show up\", \"no-show follow-up email\", \"how to rebook a no-show\", \"reduce no-shows\". Writes the same-day no-show sequence (gracious message, rebooking options, value touch, close the loop), sets the timing across email, phone and LinkedIn, and diagnoses why no-shows happen so the booking process can be fixed.",
@@ -6103,6 +6452,126 @@
       "references": [],
       "words": 359,
       "updated": "2026-10-23T01:49:50+05:30"
+    },
+    {
+      "name": "outreach-compliance-check",
+      "title": "Outreach compliance check",
+      "description": "Use this skill when you need to check that cold email or LinkedIn outreach follows privacy and anti-spam rules before it goes out: \"is this campaign GDPR compliant\", \"CAN-SPAM checklist\", \"can we email people in the EU\", \"check our cold outreach for compliance\". Checks the audience, lawful basis, data source, sender identity, opt-out, frequency and record keeping by region, flags what must change, and produces a pass/fix report. A practical checklist, not legal advice.",
+      "summary": "Use this before a campaign reaches people in a new region, or when a list comes from a new source. It is a practical pre-flight check; for anything unclear or high-risk, the user should ask their own legal counsel.",
+      "category": "deliverability",
+      "category_name": "Deliverability",
+      "tags": [
+        "RevOps",
+        "Founders",
+        "Marketing",
+        "Agencies"
+      ],
+      "keywords": [
+        "cold email gdpr compliance",
+        "can spam checklist b2b",
+        "cold outreach compliance",
+        "claude compliance skill",
+        "b2b email privacy rules"
+      ],
+      "inputs": [
+        "Campaign and audience regions",
+        "Data source",
+        "Email and message copy"
+      ],
+      "outputs": [
+        "Pass/fix report by region",
+        "Required changes",
+        "Record-keeping checklist"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/outreach-compliance-check",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/outreach-compliance-check",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/outreach-compliance-check/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill outreach-compliance-check",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/outreach-compliance-check.jpg",
+      "markdown": "---\nname: outreach-compliance-check\ndescription: \"Use this skill when you need to check that cold email or LinkedIn outreach follows privacy and anti-spam rules before it goes out: \\\"is this campaign GDPR compliant\\\", \\\"CAN-SPAM checklist\\\", \\\"can we email people in the EU\\\", \\\"check our cold outreach for compliance\\\". Checks the audience, lawful basis, data source, sender identity, opt-out, frequency and record keeping by region, flags what must change, and produces a pass/fix report. A practical checklist, not legal advice.\"\nlicense: MIT\nmetadata:\n  title: Outreach compliance check\n  category: deliverability\n  tags: \"RevOps, Founders, Marketing, Agencies\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"cold email gdpr compliance, can spam checklist b2b, cold outreach compliance, claude compliance skill, b2b email privacy rules\"\n  inputs: \"Campaign and audience regions, Data source, Email and message copy\"\n  outputs: \"Pass/fix report by region, Required changes, Record-keeping checklist\"\n---\n\nUse this before a campaign reaches people in a new region, or when a list comes from a new source. It is a practical pre-flight check; for anything unclear or high-risk, the user should ask their own legal counsel.\n\n## Inputs\n\n- Audience: which countries, B2B or consumer, job roles.\n- Where the data came from and what the source says about permitted use.\n- The emails and messages as they will be sent.\n- How opt-outs and records are handled today.\n\n## The play\n\n### 1. Sort the audience by region\nRules differ. Typical buckets:\n\n| Region | Common baseline for B2B cold email |\n| --- | --- |\n| United States | Allowed with honest headers and subject, a physical address, a working opt-out honoured promptly |\n| EU and UK | Usually relies on legitimate interest for business contacts: relevant offer, role-based targeting, clear identity, easy opt-out, ability to say where the data came from |\n| Canada | Stricter consent rules; business-to-business exceptions are narrow |\n| Australia and others | Check local rules; consent expectations vary |\n\nRead [references/compliance-checklist.md](references/compliance-checklist.md) for the full checklist per region.\n\n### 2. Check the data source\nThe source must allow the use, be recent, and be explainable to the recipient if they ask. Personal email addresses and consumer data raise the bar sharply.\n\n### 3. Check relevance\nFor legitimate-interest outreach, the message must be relevant to the person's job. A finance tool to a CFO passes; the same email to a list of every employee does not.\n\n### 4. Check the message\nReal sender name and company, an honest subject, a physical address where required, and a simple opt-out in every commercial email. No misleading \"Re:\" or \"Fwd:\" subjects.\n\n### 5. Check operations\nOpt-outs honoured across all mailboxes and channels; suppression lists shared; records of source, date and basis kept; a process to answer \"where did you get my data?\" and deletion requests.\n\n## Output format\n\n```\nRegion | Audience | Verdict (pass / fix / do not send) | Issues | Required changes\nRecords to keep: <list>\nOpen questions for counsel: <list>\n```\n\n## What good looks like\n\n- Each region gets its own verdict; one rule is not applied everywhere.\n- Every \"fix\" has a concrete change.\n- High-risk cases (consumer data, sensitive sectors, unclear sources) are sent to counsel, not guessed.\n- The common mistake is assuming \"it's B2B, so anything goes\", which ignores regional rules and the recipient's right to object.\n\n## Rules\n\n- MUST state that this is a checklist, not legal advice, when the stakes are high.\n- MUST require a working opt-out and identity in every commercial email.\n- NEVER approve outreach to data of unknown or unlawful origin.\n- NEVER suggest hiding the sender, the source or the commercial nature of a message.\n\n## Example prompts\n\n- \"We're emailing 2,000 operations leaders in Germany and the UK. Run a compliance check.\"\n- \"Check this cold email and our opt-out process against US and EU rules.\"\n- \"Build a pre-send compliance checklist for our SDR team.\"\n",
+      "html": "<p>Use this before a campaign reaches people in a new region, or when a list comes from a new source. It is a practical pre-flight check; for anything unclear or high-risk, the user should ask their own legal counsel.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Audience: which countries, B2B or consumer, job roles.</li><li>Where the data came from and what the source says about permitted use.</li><li>The emails and messages as they will be sent.</li><li>How opt-outs and records are handled today.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-sort-the-audience-by-region\">1. Sort the audience by region</h3>\n<p>Rules differ. Typical buckets:</p>\n<div class=\"md-table\"><table><thead><tr><th>Region</th><th>Common baseline for B2B cold email</th></tr></thead><tbody><tr><td>United States</td><td>Allowed with honest headers and subject, a physical address, a working opt-out honoured promptly</td></tr><tr><td>EU and UK</td><td>Usually relies on legitimate interest for business contacts: relevant offer, role-based targeting, clear identity, easy opt-out, ability to say where the data came from</td></tr><tr><td>Canada</td><td>Stricter consent rules; business-to-business exceptions are narrow</td></tr><tr><td>Australia and others</td><td>Check local rules; consent expectations vary</td></tr></tbody></table></div>\n<p>Read <a href=\"https://github.com/prosyo-ai/gtm-skill/blob/main/skills/outreach-compliance-check/references/compliance-checklist.md\">references/compliance-checklist.md</a> for the full checklist per region.</p>\n<h3 id=\"2-check-the-data-source\">2. Check the data source</h3>\n<p>The source must allow the use, be recent, and be explainable to the recipient if they ask. Personal email addresses and consumer data raise the bar sharply.</p>\n<h3 id=\"3-check-relevance\">3. Check relevance</h3>\n<p>For legitimate-interest outreach, the message must be relevant to the person's job. A finance tool to a CFO passes; the same email to a list of every employee does not.</p>\n<h3 id=\"4-check-the-message\">4. Check the message</h3>\n<p>Real sender name and company, an honest subject, a physical address where required, and a simple opt-out in every commercial email. No misleading &quot;Re:&quot; or &quot;Fwd:&quot; subjects.</p>\n<h3 id=\"5-check-operations\">5. Check operations</h3>\n<p>Opt-outs honoured across all mailboxes and channels; suppression lists shared; records of source, date and basis kept; a process to answer &quot;where did you get my data?&quot; and deletion requests.</p>\n<h2 id=\"output-format\">Output format</h2>\n<pre><code>Region | Audience | Verdict (pass / fix / do not send) | Issues | Required changes\nRecords to keep: &lt;list&gt;\nOpen questions for counsel: &lt;list&gt;</code></pre>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>Each region gets its own verdict; one rule is not applied everywhere.</li><li>Every &quot;fix&quot; has a concrete change.</li><li>High-risk cases (consumer data, sensitive sectors, unclear sources) are sent to counsel, not guessed.</li><li>The common mistake is assuming &quot;it's B2B, so anything goes&quot;, which ignores regional rules and the recipient's right to object.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST state that this is a checklist, not legal advice, when the stakes are high.</li><li>MUST require a working opt-out and identity in every commercial email.</li><li>NEVER approve outreach to data of unknown or unlawful origin.</li><li>NEVER suggest hiding the sender, the source or the commercial nature of a message.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;We're emailing 2,000 operations leaders in Germany and the UK. Run a compliance check.&quot;</li><li>&quot;Check this cold email and our opt-out process against US and EU rules.&quot;</li><li>&quot;Build a pre-send compliance checklist for our SDR team.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-sort-the-audience-by-region",
+          "text": "1. Sort the audience by region"
+        },
+        {
+          "level": 3,
+          "id": "2-check-the-data-source",
+          "text": "2. Check the data source"
+        },
+        {
+          "level": 3,
+          "id": "3-check-relevance",
+          "text": "3. Check relevance"
+        },
+        {
+          "level": 3,
+          "id": "4-check-the-message",
+          "text": "4. Check the message"
+        },
+        {
+          "level": 3,
+          "id": "5-check-operations",
+          "text": "5. Check operations"
+        },
+        {
+          "level": 2,
+          "id": "output-format",
+          "text": "Output format"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "We're emailing 2,000 operations leaders in Germany and the UK. Run a compliance check.",
+        "Check this cold email and our opt-out process against US and EU rules.",
+        "Build a pre-send compliance checklist for our SDR team."
+      ],
+      "references": [
+        {
+          "file": "references/compliance-checklist.md",
+          "title": "Compliance checklist",
+          "markdown": "# Compliance checklist\n\nA practical pre-send checklist. Rules change and vary by country; confirm anything high-risk with counsel.\n\n## Every region\n\n- [ ] Sender name and company are real and visible.\n- [ ] Subject line honestly reflects the content.\n- [ ] Commercial nature of the message is clear.\n- [ ] A simple opt-out (reply \"no\" or a link) in every commercial email.\n- [ ] Opt-outs honoured quickly and across every mailbox, channel and future list.\n- [ ] Shared suppression list checked before each send.\n- [ ] Data source recorded per contact (source, date, basis).\n- [ ] A ready answer to \"where did you get my details?\"\n- [ ] A way to handle deletion and access requests.\n\n## United States (B2B cold email)\n\n- [ ] No misleading header information or deceptive subject lines.\n- [ ] Valid physical postal address of the sender.\n- [ ] Opt-out works and is honoured within the required window.\n- [ ] Third parties sending on your behalf follow the same rules.\n\n## EU and UK (business contacts)\n\n- [ ] A documented legitimate-interest assessment: purpose, necessity, balancing test.\n- [ ] Targeting is role-based and the offer is relevant to the role.\n- [ ] Contact data is business data (work email), not personal or consumer data.\n- [ ] Privacy information is available (link to a privacy notice) and the data source can be disclosed.\n- [ ] Right to object is offered from the first message.\n- [ ] Data kept only as long as needed; stale contacts removed.\n- [ ] Sole traders and some partnerships may be treated as individuals: extra care.\n\n## Canada\n\n- [ ] Consent basis identified (express or a narrow implied-consent exception).\n- [ ] Sender identification and contact information included.\n- [ ] Unsubscribe mechanism works and is honoured promptly.\n\n## LinkedIn and other platforms\n\n- [ ] Platform terms followed: no prohibited automation, no fake accounts, within activity limits.\n- [ ] Same opt-out respect applies: a \"not interested\" ends the conversation.\n\n## Red flags: stop and ask counsel\n\n- Consumer or personal data in a B2B campaign.\n- Health, finance or children-related audiences.\n- Data bought from a source that cannot document its own basis.\n- Messages that would surprise the recipient about how you got their details.\n",
+          "html": "<p>A practical pre-send checklist. Rules change and vary by country; confirm anything high-risk with counsel.</p>\n<h2 id=\"every-region\">Every region</h2>\n<ul><li>[ ] Sender name and company are real and visible.</li><li>[ ] Subject line honestly reflects the content.</li><li>[ ] Commercial nature of the message is clear.</li><li>[ ] A simple opt-out (reply &quot;no&quot; or a link) in every commercial email.</li><li>[ ] Opt-outs honoured quickly and across every mailbox, channel and future list.</li><li>[ ] Shared suppression list checked before each send.</li><li>[ ] Data source recorded per contact (source, date, basis).</li><li>[ ] A ready answer to &quot;where did you get my details?&quot;</li><li>[ ] A way to handle deletion and access requests.</li></ul>\n<h2 id=\"united-states-b2b-cold-email\">United States (B2B cold email)</h2>\n<ul><li>[ ] No misleading header information or deceptive subject lines.</li><li>[ ] Valid physical postal address of the sender.</li><li>[ ] Opt-out works and is honoured within the required window.</li><li>[ ] Third parties sending on your behalf follow the same rules.</li></ul>\n<h2 id=\"eu-and-uk-business-contacts\">EU and UK (business contacts)</h2>\n<ul><li>[ ] A documented legitimate-interest assessment: purpose, necessity, balancing test.</li><li>[ ] Targeting is role-based and the offer is relevant to the role.</li><li>[ ] Contact data is business data (work email), not personal or consumer data.</li><li>[ ] Privacy information is available (link to a privacy notice) and the data source can be disclosed.</li><li>[ ] Right to object is offered from the first message.</li><li>[ ] Data kept only as long as needed; stale contacts removed.</li><li>[ ] Sole traders and some partnerships may be treated as individuals: extra care.</li></ul>\n<h2 id=\"canada\">Canada</h2>\n<ul><li>[ ] Consent basis identified (express or a narrow implied-consent exception).</li><li>[ ] Sender identification and contact information included.</li><li>[ ] Unsubscribe mechanism works and is honoured promptly.</li></ul>\n<h2 id=\"linkedin-and-other-platforms\">LinkedIn and other platforms</h2>\n<ul><li>[ ] Platform terms followed: no prohibited automation, no fake accounts, within activity limits.</li><li>[ ] Same opt-out respect applies: a &quot;not interested&quot; ends the conversation.</li></ul>\n<h2 id=\"red-flags-stop-and-ask-counsel\">Red flags: stop and ask counsel</h2>\n<ul><li>Consumer or personal data in a B2B campaign.</li><li>Health, finance or children-related audiences.</li><li>Data bought from a source that cannot document its own basis.</li><li>Messages that would surprise the recipient about how you got their details.</li></ul>\n",
+          "words": 322
+        }
+      ],
+      "words": 780,
+      "updated": null
     },
     {
       "name": "pipeline-review",
@@ -6660,6 +7129,114 @@
       "updated": "2026-10-23T01:49:50+05:30"
     },
     {
+      "name": "renewal-risk-review",
+      "title": "Renewal risk review",
+      "description": "Use this skill when renewals are coming up and you need to know which customers might not renew: \"renewal risk review\", \"which accounts will churn\", \"prepare for renewals next quarter\", \"customer health check before renewal\". Scores each upcoming renewal on usage, outcomes, relationships, support and commercial signals, flags at-risk accounts with evidence, and writes a save plan and the value-review outreach for each. Produces a renewal risk table and a 90-day action plan.",
+      "summary": "Use this 90 to 120 days before renewals. Most churn is decided months before the renewal date; the review finds it while there is still time to change it.",
+      "category": "abm-expansion",
+      "category_name": "ABM & Expansion",
+      "tags": [
+        "Customer Success",
+        "Sales Leaders",
+        "Founders",
+        "RevOps"
+      ],
+      "keywords": [
+        "renewal risk assessment",
+        "customer health score",
+        "churn risk review",
+        "claude renewal skill",
+        "saas renewal playbook"
+      ],
+      "inputs": [
+        "Renewals due in the next 120 days",
+        "Usage and support data",
+        "Contacts and recent conversations"
+      ],
+      "outputs": [
+        "Renewal risk table",
+        "Evidence per account",
+        "Save plans",
+        "Value-review messages"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/renewal-risk-review",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/renewal-risk-review",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/renewal-risk-review/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill renewal-risk-review",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/renewal-risk-review.jpg",
+      "markdown": "---\nname: renewal-risk-review\ndescription: \"Use this skill when renewals are coming up and you need to know which customers might not renew: \\\"renewal risk review\\\", \\\"which accounts will churn\\\", \\\"prepare for renewals next quarter\\\", \\\"customer health check before renewal\\\". Scores each upcoming renewal on usage, outcomes, relationships, support and commercial signals, flags at-risk accounts with evidence, and writes a save plan and the value-review outreach for each. Produces a renewal risk table and a 90-day action plan.\"\nlicense: MIT\nmetadata:\n  title: Renewal risk review\n  category: abm-expansion\n  tags: \"Customer Success, Sales Leaders, Founders, RevOps\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"renewal risk assessment, customer health score, churn risk review, claude renewal skill, saas renewal playbook\"\n  inputs: \"Renewals due in the next 120 days, Usage and support data, Contacts and recent conversations\"\n  outputs: \"Renewal risk table, Evidence per account, Save plans, Value-review messages\"\n---\n\nUse this 90 to 120 days before renewals. Most churn is decided months before the renewal date; the review finds it while there is still time to change it.\n\n## Inputs\n\n- Renewals due in the next 120 days: account, value, date, plan.\n- Usage: active users against paid seats, trend over 90 days, key feature adoption.\n- Outcomes: what the customer said success looks like, and whether it happened.\n- Relationships: champion status, executive sponsor, last meaningful conversation.\n- Support and commercial signals: open escalations, late payments, price complaints, requests to downgrade.\n\n## The play\n\n### 1. Score five dimensions\n| Dimension | Healthy | Risk |\n| --- | --- | --- |\n| Usage | Active users 70%+ of seats, stable or rising | Under 40% or falling 20%+ in 90 days |\n| Outcomes | A measurable result the customer agrees on | No agreed result, or \"we're not sure it's working\" |\n| Relationships | Engaged champion plus a sponsor | Champion left or silent 60+ days |\n| Support | Issues resolved, no open escalations | Repeated issues, open escalation |\n| Commercial | On-time payments, no price pushback | Downgrade requests, procurement review, budget cuts |\n\nEach dimension: green 0, amber 1, red 2. Total 0-2 healthy, 3-5 watch, 6+ at risk. Any red on relationships or outcomes makes an account at least \"watch\".\n\n### 2. Write the evidence\nEach score cites a fact: \"11 of 40 seats active, down from 26\", \"champion Priya left in August\". No evidence, no score.\n\n### 3. Plan the save\n| Main risk | Save move |\n| --- | --- |\n| Low usage | Re-onboarding for the team that matters most, with a 30-day target |\n| No proven outcome | Value review with numbers before any renewal talk |\n| Lost champion | Find and onboard the new owner; executive-to-executive check-in |\n| Support pain | Fix plan with dates, owned by a named person |\n| Budget | Right-size the plan before they ask; protect the core use case |\n\n### 4. Open with a value review\nLead with what the customer got, not the renewal. Share usage, results, and what similar customers do next; ask what would make next year a clear yes.\n\n### 5. Review weekly\nMove accounts between bands as evidence changes. Escalate any at-risk account above a value threshold to a leader within the week.\n\n## What good looks like\n\n- Every risk score is backed by a fact a manager can check.\n- At-risk accounts get a save plan 90 days out, not a discount 9 days out.\n- The value review happens before the renewal conversation.\n- The common mistake is a health score built from logins alone, which misses the account whose one power user logs in daily while the budget owner has already decided to cancel.\n\n## Rules\n\n- MUST cite evidence for every score.\n- MUST run the review at least 90 days before renewal.\n- NEVER lead a renewal conversation with a discount.\n- NEVER mark an account healthy when its champion has left and no new owner is engaged.\n\n## Example prompts\n\n- \"Here are our 40 renewals for next quarter with usage data. Which are at risk and what do we do?\"\n- \"Build a renewal risk scorecard our CS team can run monthly.\"\n- \"Write a value-review email for an account whose usage dropped 30%.\"\n",
+      "html": "<p>Use this 90 to 120 days before renewals. Most churn is decided months before the renewal date; the review finds it while there is still time to change it.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Renewals due in the next 120 days: account, value, date, plan.</li><li>Usage: active users against paid seats, trend over 90 days, key feature adoption.</li><li>Outcomes: what the customer said success looks like, and whether it happened.</li><li>Relationships: champion status, executive sponsor, last meaningful conversation.</li><li>Support and commercial signals: open escalations, late payments, price complaints, requests to downgrade.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-score-five-dimensions\">1. Score five dimensions</h3>\n<div class=\"md-table\"><table><thead><tr><th>Dimension</th><th>Healthy</th><th>Risk</th></tr></thead><tbody><tr><td>Usage</td><td>Active users 70%+ of seats, stable or rising</td><td>Under 40% or falling 20%+ in 90 days</td></tr><tr><td>Outcomes</td><td>A measurable result the customer agrees on</td><td>No agreed result, or &quot;we're not sure it's working&quot;</td></tr><tr><td>Relationships</td><td>Engaged champion plus a sponsor</td><td>Champion left or silent 60+ days</td></tr><tr><td>Support</td><td>Issues resolved, no open escalations</td><td>Repeated issues, open escalation</td></tr><tr><td>Commercial</td><td>On-time payments, no price pushback</td><td>Downgrade requests, procurement review, budget cuts</td></tr></tbody></table></div>\n<p>Each dimension: green 0, amber 1, red 2. Total 0-2 healthy, 3-5 watch, 6+ at risk. Any red on relationships or outcomes makes an account at least &quot;watch&quot;.</p>\n<h3 id=\"2-write-the-evidence\">2. Write the evidence</h3>\n<p>Each score cites a fact: &quot;11 of 40 seats active, down from 26&quot;, &quot;champion Priya left in August&quot;. No evidence, no score.</p>\n<h3 id=\"3-plan-the-save\">3. Plan the save</h3>\n<div class=\"md-table\"><table><thead><tr><th>Main risk</th><th>Save move</th></tr></thead><tbody><tr><td>Low usage</td><td>Re-onboarding for the team that matters most, with a 30-day target</td></tr><tr><td>No proven outcome</td><td>Value review with numbers before any renewal talk</td></tr><tr><td>Lost champion</td><td>Find and onboard the new owner; executive-to-executive check-in</td></tr><tr><td>Support pain</td><td>Fix plan with dates, owned by a named person</td></tr><tr><td>Budget</td><td>Right-size the plan before they ask; protect the core use case</td></tr></tbody></table></div>\n<h3 id=\"4-open-with-a-value-review\">4. Open with a value review</h3>\n<p>Lead with what the customer got, not the renewal. Share usage, results, and what similar customers do next; ask what would make next year a clear yes.</p>\n<h3 id=\"5-review-weekly\">5. Review weekly</h3>\n<p>Move accounts between bands as evidence changes. Escalate any at-risk account above a value threshold to a leader within the week.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>Every risk score is backed by a fact a manager can check.</li><li>At-risk accounts get a save plan 90 days out, not a discount 9 days out.</li><li>The value review happens before the renewal conversation.</li><li>The common mistake is a health score built from logins alone, which misses the account whose one power user logs in daily while the budget owner has already decided to cancel.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST cite evidence for every score.</li><li>MUST run the review at least 90 days before renewal.</li><li>NEVER lead a renewal conversation with a discount.</li><li>NEVER mark an account healthy when its champion has left and no new owner is engaged.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Here are our 40 renewals for next quarter with usage data. Which are at risk and what do we do?&quot;</li><li>&quot;Build a renewal risk scorecard our CS team can run monthly.&quot;</li><li>&quot;Write a value-review email for an account whose usage dropped 30%.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-score-five-dimensions",
+          "text": "1. Score five dimensions"
+        },
+        {
+          "level": 3,
+          "id": "2-write-the-evidence",
+          "text": "2. Write the evidence"
+        },
+        {
+          "level": 3,
+          "id": "3-plan-the-save",
+          "text": "3. Plan the save"
+        },
+        {
+          "level": 3,
+          "id": "4-open-with-a-value-review",
+          "text": "4. Open with a value review"
+        },
+        {
+          "level": 3,
+          "id": "5-review-weekly",
+          "text": "5. Review weekly"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Here are our 40 renewals for next quarter with usage data. Which are at risk and what do we do?",
+        "Build a renewal risk scorecard our CS team can run monthly.",
+        "Write a value-review email for an account whose usage dropped 30%."
+      ],
+      "references": [],
+      "words": 507,
+      "updated": null
+    },
+    {
       "name": "reply-handler",
       "title": "Reply handler",
       "description": "Use this skill when outbound replies need triage and answers: \"sort these replies\", \"draft responses to my inbox\", \"what do I say to this reply\", \"handle replies from my campaign\". Classifies each reply (interested, question, objection, referral, not now, not interested, out of office, wrong person, unsubscribe), sets priority and the next action, drafts a response for each that moves toward a meeting or closes cleanly, and updates what the CRM needs to know. Drafts only: a human approves before anything is sent.",
@@ -6774,6 +7351,233 @@
       ],
       "words": 798,
       "updated": "2026-10-23T01:49:50+05:30"
+    },
+    {
+      "name": "sales-demo-script",
+      "title": "Sales demo script",
+      "description": "Use this skill when you need to plan or run a B2B product demo that moves the deal forward: \"build a demo script\", \"prep my demo for tomorrow\", \"our demos are feature tours\", \"tailor the demo to this prospect\". Builds a discovery-led demo around the buyer's top two or three problems: a quick recap, the before-and-after story, the moments that matter, proof, and a clear next step. Produces a timed demo plan, talk track, the questions to ask during it and the follow-up email.",
+      "summary": "Use this before any demo. A good demo is not a tour of the product; it is proof that the buyer's specific problems go away, shown in the order they care about.",
+      "category": "deals",
+      "category_name": "Deals & Pipeline",
+      "tags": [
+        "Sales",
+        "Founders",
+        "Sales Leaders"
+      ],
+      "keywords": [
+        "sales demo script",
+        "product demo best practices b2b",
+        "demo talk track",
+        "claude demo script skill",
+        "discovery led demo"
+      ],
+      "inputs": [
+        "Discovery notes",
+        "Attendees and roles",
+        "Product and proof"
+      ],
+      "outputs": [
+        "Timed demo plan",
+        "Talk track",
+        "In-demo questions",
+        "Follow-up email"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/sales-demo-script",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/sales-demo-script",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/sales-demo-script/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill sales-demo-script",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/sales-demo-script.jpg",
+      "markdown": "---\nname: sales-demo-script\ndescription: \"Use this skill when you need to plan or run a B2B product demo that moves the deal forward: \\\"build a demo script\\\", \\\"prep my demo for tomorrow\\\", \\\"our demos are feature tours\\\", \\\"tailor the demo to this prospect\\\". Builds a discovery-led demo around the buyer's top two or three problems: a quick recap, the before-and-after story, the moments that matter, proof, and a clear next step. Produces a timed demo plan, talk track, the questions to ask during it and the follow-up email.\"\nlicense: MIT\nmetadata:\n  title: Sales demo script\n  category: deals\n  tags: \"Sales, Founders, Sales Leaders\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"sales demo script, product demo best practices b2b, demo talk track, claude demo script skill, discovery led demo\"\n  inputs: \"Discovery notes, Attendees and roles, Product and proof\"\n  outputs: \"Timed demo plan, Talk track, In-demo questions, Follow-up email\"\n---\n\nUse this before any demo. A good demo is not a tour of the product; it is proof that the buyer's specific problems go away, shown in the order they care about.\n\n## Inputs\n\n- Discovery notes: the problems, their impact, the buyer's words, what success looks like.\n- Attendees and their roles (the champion, the economic buyer, evaluators, users).\n- The product areas that solve those problems, and approved proof.\n\n## The play\n\n### 1. Choose two or three moments\nFrom discovery, pick the problems with the biggest impact. Each becomes one \"moment\" in the demo: the before (their pain, in their words), the after (the product doing the job), and the proof. Everything else is left out, however impressive.\n\n### 2. Structure the time\n| Minutes (of 30) | Section |\n| --- | --- |\n| 0-3 | Recap: \"Here's what we heard. Still right? Anything changed?\" |\n| 3-6 | The headline outcome: what life looks like after, in one screen |\n| 6-22 | Two or three moments, most important first |\n| 22-26 | Questions and objections |\n| 26-30 | Next step agreed with dates and people |\n\nStart with the most important moment. Executives often leave early.\n\n### 3. Talk track per moment\n1. **Set it up**: \"You said approvals stall close for a week.\"\n2. **Show it**: the shortest path in the product, with their data or a realistic example.\n3. **Land it**: \"That's the step that took Contoso from 9 days to 4.\"\n4. **Check it**: \"How would this work with your approval rules?\"\n\n### 4. Prepare for each role\nEvaluators want to see how it works; economic buyers want impact and risk; users want to know it is easy. Plan one line for each role.\n\n### 5. Close with a next step\nPropose it, don't ask what they want to do: \"Next would be a technical review with Dev and a trial on your data. Does Thursday work?\"\n\n## What good looks like\n\n- The buyer talks for at least a third of the demo.\n- No screen appears that does not map to a stated problem.\n- The demo ends with a dated, agreed next step.\n- The common mistake is starting with the login screen and touring every menu, so the moment that matters arrives at minute 25 after the buyer has stopped listening.\n\n## Rules\n\n- MUST start with a recap of the buyer's problems.\n- MUST map each demo moment to a stated problem.\n- NEVER demo features that are not available, or present roadmap items as live.\n- NEVER show other customers' data.\n\n## Example prompts\n\n- \"Build a 30-minute demo plan for Lumen from these discovery notes. The CFO joins for the first 10 minutes.\"\n- \"Our demos run 60 minutes and buyers drift. Rewrite our standard demo.\"\n- \"Write the follow-up email after today's demo with the next steps we agreed.\"\n",
+      "html": "<p>Use this before any demo. A good demo is not a tour of the product; it is proof that the buyer's specific problems go away, shown in the order they care about.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Discovery notes: the problems, their impact, the buyer's words, what success looks like.</li><li>Attendees and their roles (the champion, the economic buyer, evaluators, users).</li><li>The product areas that solve those problems, and approved proof.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-choose-two-or-three-moments\">1. Choose two or three moments</h3>\n<p>From discovery, pick the problems with the biggest impact. Each becomes one &quot;moment&quot; in the demo: the before (their pain, in their words), the after (the product doing the job), and the proof. Everything else is left out, however impressive.</p>\n<h3 id=\"2-structure-the-time\">2. Structure the time</h3>\n<div class=\"md-table\"><table><thead><tr><th>Minutes (of 30)</th><th>Section</th></tr></thead><tbody><tr><td>0-3</td><td>Recap: &quot;Here's what we heard. Still right? Anything changed?&quot;</td></tr><tr><td>3-6</td><td>The headline outcome: what life looks like after, in one screen</td></tr><tr><td>6-22</td><td>Two or three moments, most important first</td></tr><tr><td>22-26</td><td>Questions and objections</td></tr><tr><td>26-30</td><td>Next step agreed with dates and people</td></tr></tbody></table></div>\n<p>Start with the most important moment. Executives often leave early.</p>\n<h3 id=\"3-talk-track-per-moment\">3. Talk track per moment</h3>\n<ol><li><strong>Set it up</strong>: &quot;You said approvals stall close for a week.&quot;</li><li><strong>Show it</strong>: the shortest path in the product, with their data or a realistic example.</li><li><strong>Land it</strong>: &quot;That's the step that took Contoso from 9 days to 4.&quot;</li><li><strong>Check it</strong>: &quot;How would this work with your approval rules?&quot;</li></ol>\n<h3 id=\"4-prepare-for-each-role\">4. Prepare for each role</h3>\n<p>Evaluators want to see how it works; economic buyers want impact and risk; users want to know it is easy. Plan one line for each role.</p>\n<h3 id=\"5-close-with-a-next-step\">5. Close with a next step</h3>\n<p>Propose it, don't ask what they want to do: &quot;Next would be a technical review with Dev and a trial on your data. Does Thursday work?&quot;</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>The buyer talks for at least a third of the demo.</li><li>No screen appears that does not map to a stated problem.</li><li>The demo ends with a dated, agreed next step.</li><li>The common mistake is starting with the login screen and touring every menu, so the moment that matters arrives at minute 25 after the buyer has stopped listening.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST start with a recap of the buyer's problems.</li><li>MUST map each demo moment to a stated problem.</li><li>NEVER demo features that are not available, or present roadmap items as live.</li><li>NEVER show other customers' data.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Build a 30-minute demo plan for Lumen from these discovery notes. The CFO joins for the first 10 minutes.&quot;</li><li>&quot;Our demos run 60 minutes and buyers drift. Rewrite our standard demo.&quot;</li><li>&quot;Write the follow-up email after today's demo with the next steps we agreed.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-choose-two-or-three-moments",
+          "text": "1. Choose two or three moments"
+        },
+        {
+          "level": 3,
+          "id": "2-structure-the-time",
+          "text": "2. Structure the time"
+        },
+        {
+          "level": 3,
+          "id": "3-talk-track-per-moment",
+          "text": "3. Talk track per moment"
+        },
+        {
+          "level": 3,
+          "id": "4-prepare-for-each-role",
+          "text": "4. Prepare for each role"
+        },
+        {
+          "level": 3,
+          "id": "5-close-with-a-next-step",
+          "text": "5. Close with a next step"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Build a 30-minute demo plan for Lumen from these discovery notes. The CFO joins for the first 10 minutes.",
+        "Our demos run 60 minutes and buyers drift. Rewrite our standard demo.",
+        "Write the follow-up email after today's demo with the next steps we agreed."
+      ],
+      "references": [],
+      "words": 456,
+      "updated": null
+    },
+    {
+      "name": "sales-playbook-builder",
+      "title": "Sales playbook builder",
+      "description": "Use this skill when you need a written sales playbook a team can actually follow: \"build our sales playbook\", \"document how we sell\", \"playbook for new reps\", \"our reps all sell differently\". Captures the ICP, personas, the stages and exit criteria, the plays for each stage, messaging, objection answers, tools and the metrics that matter, from what top performers already do. Produces a structured playbook outline with the first version of every section, ready for the team to refine.",
+      "summary": "Use this when the way the team sells lives in a few people's heads. A good playbook turns what top performers do into something every rep can repeat, and gets updated as the team learns.",
+      "category": "enablement",
+      "category_name": "Enablement & Leadership",
+      "tags": [
+        "Sales Leaders",
+        "Founders",
+        "RevOps"
+      ],
+      "keywords": [
+        "sales playbook template",
+        "how to write a sales playbook",
+        "b2b sales process documentation",
+        "claude sales playbook skill",
+        "sales enablement playbook"
+      ],
+      "inputs": [
+        "How top reps sell today",
+        "ICP and personas",
+        "Sales stages and metrics"
+      ],
+      "outputs": [
+        "Playbook outline",
+        "Stage definitions and exit criteria",
+        "Plays per stage",
+        "Metrics page"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/sales-playbook-builder",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/sales-playbook-builder",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/sales-playbook-builder/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill sales-playbook-builder",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/sales-playbook-builder.jpg",
+      "markdown": "---\nname: sales-playbook-builder\ndescription: \"Use this skill when you need a written sales playbook a team can actually follow: \\\"build our sales playbook\\\", \\\"document how we sell\\\", \\\"playbook for new reps\\\", \\\"our reps all sell differently\\\". Captures the ICP, personas, the stages and exit criteria, the plays for each stage, messaging, objection answers, tools and the metrics that matter, from what top performers already do. Produces a structured playbook outline with the first version of every section, ready for the team to refine.\"\nlicense: MIT\nmetadata:\n  title: Sales playbook builder\n  category: enablement\n  tags: \"Sales Leaders, Founders, RevOps\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"sales playbook template, how to write a sales playbook, b2b sales process documentation, claude sales playbook skill, sales enablement playbook\"\n  inputs: \"How top reps sell today, ICP and personas, Sales stages and metrics\"\n  outputs: \"Playbook outline, Stage definitions and exit criteria, Plays per stage, Metrics page\"\n---\n\nUse this when the way the team sells lives in a few people's heads. A good playbook turns what top performers do into something every rep can repeat, and gets updated as the team learns.\n\n## Inputs\n\n- Interviews or notes from the two or three best reps: how they find, open, run and close deals.\n- ICP, personas, value proposition and proof.\n- Current stages, conversion rates and cycle length.\n\n## The play\n\n### 1. Start from the best reps, not theory\nInterview top performers with the same questions: who they target first, how they open, what they ask in discovery, how they handle the top objections, how they get to the economic buyer. Their patterns become the plays.\n\n### 2. Define stages by buyer actions\nEach stage has an exit criterion the buyer completes, not the rep. Example: \"Discovery complete\" means the buyer confirmed the problem, its impact and who decides. Read [references/playbook-outline.md](references/playbook-outline.md) for the full outline and stage table.\n\n### 3. Write one play per moment\nA play is: when it applies, the goal, the steps, the assets, and what good looks like. Keep each to one page. Typical plays: inbound follow-up, cold outbound, discovery, demo, multi-threading, proposal, negotiation, close, handoff to customer success.\n\n### 4. Add the messaging and objection pages\nOne page of persona messaging, one page of the ten most common objections with answers and proof.\n\n### 5. Define the metrics\nActivity and conversion at each stage, cycle time and win rate, with the current baseline and target. Reps should know which number to look at when something feels off.\n\n### 6. Make it living\nName an owner, set a quarterly review, and add a \"what we learned\" log. A playbook nobody updates is wrong within six months.\n\n## What good looks like\n\n- A new rep can run a first discovery call from the playbook alone.\n- Stage exit criteria are buyer actions, so the forecast reflects reality.\n- Each play fits on one page.\n- The common mistake is a 60-page document written by someone who doesn't sell, which nobody opens after onboarding.\n\n## Rules\n\n- MUST base plays on what top performers actually do.\n- MUST define stage exit criteria as buyer actions.\n- MUST name an owner and a review cadence.\n- NEVER include claims, numbers or customer stories that are not approved.\n\n## Example prompts\n\n- \"Build a first version of our sales playbook from these interviews with our three best AEs.\"\n- \"Define our sales stages with buyer-based exit criteria.\"\n- \"Write the discovery and multi-threading plays for our playbook.\"\n",
+      "html": "<p>Use this when the way the team sells lives in a few people's heads. A good playbook turns what top performers do into something every rep can repeat, and gets updated as the team learns.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Interviews or notes from the two or three best reps: how they find, open, run and close deals.</li><li>ICP, personas, value proposition and proof.</li><li>Current stages, conversion rates and cycle length.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-start-from-the-best-reps-not-theory\">1. Start from the best reps, not theory</h3>\n<p>Interview top performers with the same questions: who they target first, how they open, what they ask in discovery, how they handle the top objections, how they get to the economic buyer. Their patterns become the plays.</p>\n<h3 id=\"2-define-stages-by-buyer-actions\">2. Define stages by buyer actions</h3>\n<p>Each stage has an exit criterion the buyer completes, not the rep. Example: &quot;Discovery complete&quot; means the buyer confirmed the problem, its impact and who decides. Read <a href=\"https://github.com/prosyo-ai/gtm-skill/blob/main/skills/sales-playbook-builder/references/playbook-outline.md\">references/playbook-outline.md</a> for the full outline and stage table.</p>\n<h3 id=\"3-write-one-play-per-moment\">3. Write one play per moment</h3>\n<p>A play is: when it applies, the goal, the steps, the assets, and what good looks like. Keep each to one page. Typical plays: inbound follow-up, cold outbound, discovery, demo, multi-threading, proposal, negotiation, close, handoff to customer success.</p>\n<h3 id=\"4-add-the-messaging-and-objection-pages\">4. Add the messaging and objection pages</h3>\n<p>One page of persona messaging, one page of the ten most common objections with answers and proof.</p>\n<h3 id=\"5-define-the-metrics\">5. Define the metrics</h3>\n<p>Activity and conversion at each stage, cycle time and win rate, with the current baseline and target. Reps should know which number to look at when something feels off.</p>\n<h3 id=\"6-make-it-living\">6. Make it living</h3>\n<p>Name an owner, set a quarterly review, and add a &quot;what we learned&quot; log. A playbook nobody updates is wrong within six months.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>A new rep can run a first discovery call from the playbook alone.</li><li>Stage exit criteria are buyer actions, so the forecast reflects reality.</li><li>Each play fits on one page.</li><li>The common mistake is a 60-page document written by someone who doesn't sell, which nobody opens after onboarding.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST base plays on what top performers actually do.</li><li>MUST define stage exit criteria as buyer actions.</li><li>MUST name an owner and a review cadence.</li><li>NEVER include claims, numbers or customer stories that are not approved.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Build a first version of our sales playbook from these interviews with our three best AEs.&quot;</li><li>&quot;Define our sales stages with buyer-based exit criteria.&quot;</li><li>&quot;Write the discovery and multi-threading plays for our playbook.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-start-from-the-best-reps-not-theory",
+          "text": "1. Start from the best reps, not theory"
+        },
+        {
+          "level": 3,
+          "id": "2-define-stages-by-buyer-actions",
+          "text": "2. Define stages by buyer actions"
+        },
+        {
+          "level": 3,
+          "id": "3-write-one-play-per-moment",
+          "text": "3. Write one play per moment"
+        },
+        {
+          "level": 3,
+          "id": "4-add-the-messaging-and-objection-pages",
+          "text": "4. Add the messaging and objection pages"
+        },
+        {
+          "level": 3,
+          "id": "5-define-the-metrics",
+          "text": "5. Define the metrics"
+        },
+        {
+          "level": 3,
+          "id": "6-make-it-living",
+          "text": "6. Make it living"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Build a first version of our sales playbook from these interviews with our three best AEs.",
+        "Define our sales stages with buyer-based exit criteria.",
+        "Write the discovery and multi-threading plays for our playbook."
+      ],
+      "references": [
+        {
+          "file": "references/playbook-outline.md",
+          "title": "Playbook outline",
+          "markdown": "# Playbook outline\n\n```\n1. Who we sell to\n   - ICP (one page), disqualifiers\n   - Personas: economic buyer, champion, evaluator, user, blocker\n2. Why they buy\n   - Value proposition, three pillars with proof\n   - Persona messaging (one page)\n3. How deals move\n   - Stages with buyer-based exit criteria\n   - Qualification checklist\n4. Plays (one page each)\n   - Inbound follow-up, cold outbound, discovery, demo, multi-threading,\n     proposal, negotiation, close, handoff to customer success\n5. Objections (top ten with answers and proof)\n6. Competitors (one battlecard each)\n7. Tools and hygiene (what to log, when)\n8. Metrics (baseline, target, what to do when off)\n9. Learning log (what changed, when, why)\n```\n\n## Stage table example\n\n| Stage | Buyer exit criterion | Typical conversion to next |\n| --- | --- | --- |\n| Meeting booked | Buyer accepted a meeting about a named problem | 75-85% held |\n| Discovery complete | Buyer confirmed problem, impact and decision process | 40-60% |\n| Evaluation | Buyer agreed success criteria and joined a demo or trial | 50-60% |\n| Proposal | Economic buyer reviewed the proposal | 50-65% |\n| Commit | Buyer started the paper process (security, legal, procurement) | 80-90% |\n| Closed won | Signed | |\n\n## One-page play template\n\n```\nPlay: <name>\nWhen: <trigger or stage>\nGoal: <buyer outcome by the end>\nSteps: <3-6>\nAssets: <emails, decks, documents>\nWhat good looks like: <the bar>\nCommon mistake: <the trap>\n```\n",
+          "html": "<pre><code>1. Who we sell to\n   - ICP (one page), disqualifiers\n   - Personas: economic buyer, champion, evaluator, user, blocker\n2. Why they buy\n   - Value proposition, three pillars with proof\n   - Persona messaging (one page)\n3. How deals move\n   - Stages with buyer-based exit criteria\n   - Qualification checklist\n4. Plays (one page each)\n   - Inbound follow-up, cold outbound, discovery, demo, multi-threading,\n     proposal, negotiation, close, handoff to customer success\n5. Objections (top ten with answers and proof)\n6. Competitors (one battlecard each)\n7. Tools and hygiene (what to log, when)\n8. Metrics (baseline, target, what to do when off)\n9. Learning log (what changed, when, why)</code></pre>\n<h2 id=\"stage-table-example\">Stage table example</h2>\n<div class=\"md-table\"><table><thead><tr><th>Stage</th><th>Buyer exit criterion</th><th>Typical conversion to next</th></tr></thead><tbody><tr><td>Meeting booked</td><td>Buyer accepted a meeting about a named problem</td><td>75-85% held</td></tr><tr><td>Discovery complete</td><td>Buyer confirmed problem, impact and decision process</td><td>40-60%</td></tr><tr><td>Evaluation</td><td>Buyer agreed success criteria and joined a demo or trial</td><td>50-60%</td></tr><tr><td>Proposal</td><td>Economic buyer reviewed the proposal</td><td>50-65%</td></tr><tr><td>Commit</td><td>Buyer started the paper process (security, legal, procurement)</td><td>80-90%</td></tr><tr><td>Closed won</td><td>Signed</td><td></td></tr></tbody></table></div>\n<h2 id=\"one-page-play-template\">One-page play template</h2>\n<pre><code>Play: &lt;name&gt;\nWhen: &lt;trigger or stage&gt;\nGoal: &lt;buyer outcome by the end&gt;\nSteps: &lt;3-6&gt;\nAssets: &lt;emails, decks, documents&gt;\nWhat good looks like: &lt;the bar&gt;\nCommon mistake: &lt;the trap&gt;</code></pre>\n",
+          "words": 76
+        }
+      ],
+      "words": 491,
+      "updated": null
     },
     {
       "name": "sdr-onboarding-plan",
@@ -7464,6 +8268,113 @@
       ],
       "words": 727,
       "updated": "2026-10-23T01:49:50+05:30"
+    },
+    {
+      "name": "tech-stack-signal-outreach",
+      "title": "Tech stack signal outreach",
+      "description": "Use this skill when a company's technology choices are a buying signal for you: \"target companies using X\", \"they just added a tool we integrate with\", \"technographic outreach\", \"companies switching away from a competitor\". Reads technology signals (tools added, removed or listed in job posts), decides what each change means for your offer (integration fit, replacement window, gap you fill), and writes outreach that leads with the buyer's situation, not the stack lookup. Produces a prioritised account list with the angle for each signal.",
+      "summary": "Use this when the tools a company runs (or stops running) change how relevant you are. The signal gives timing and a hook; the message must still be about the buyer's problem.",
+      "category": "signals",
+      "category_name": "Signals",
+      "tags": [
+        "SDR",
+        "Sales",
+        "Founders",
+        "Marketing"
+      ],
+      "keywords": [
+        "technographic targeting",
+        "tech stack signals outreach",
+        "companies using a competitor",
+        "claude technographic skill",
+        "integration based prospecting"
+      ],
+      "inputs": [
+        "Technology signals per account",
+        "Your integrations and competitors",
+        "ICP"
+      ],
+      "outputs": [
+        "Signal verdicts",
+        "Prioritised accounts",
+        "Angle and message per signal"
+      ],
+      "works_with": [],
+      "version": "1.0.0",
+      "license": "MIT",
+      "author": {
+        "slug": "prosyo",
+        "name": "Prosyo",
+        "url": "https://prosyo.com"
+      },
+      "contributors": [],
+      "path": "skills/tech-stack-signal-outreach",
+      "url": "https://github.com/prosyo-ai/gtm-skill/tree/main/skills/tech-stack-signal-outreach",
+      "raw_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/skills/tech-stack-signal-outreach/SKILL.md",
+      "install": "npx skills add prosyo-ai/gtm-skill --skill tech-stack-signal-outreach",
+      "cover_url": "https://raw.githubusercontent.com/prosyo-ai/gtm-skill/main/assets/covers/tech-stack-signal-outreach.jpg",
+      "markdown": "---\nname: tech-stack-signal-outreach\ndescription: \"Use this skill when a company's technology choices are a buying signal for you: \\\"target companies using X\\\", \\\"they just added a tool we integrate with\\\", \\\"technographic outreach\\\", \\\"companies switching away from a competitor\\\". Reads technology signals (tools added, removed or listed in job posts), decides what each change means for your offer (integration fit, replacement window, gap you fill), and writes outreach that leads with the buyer's situation, not the stack lookup. Produces a prioritised account list with the angle for each signal.\"\nlicense: MIT\nmetadata:\n  title: Tech stack signal outreach\n  category: signals\n  tags: \"SDR, Sales, Founders, Marketing\"\n  author: prosyo\n  version: \"1.0.0\"\n  keywords: \"technographic targeting, tech stack signals outreach, companies using a competitor, claude technographic skill, integration based prospecting\"\n  inputs: \"Technology signals per account, Your integrations and competitors, ICP\"\n  outputs: \"Signal verdicts, Prioritised accounts, Angle and message per signal\"\n---\n\nUse this when the tools a company runs (or stops running) change how relevant you are. The signal gives timing and a hook; the message must still be about the buyer's problem.\n\n## Inputs\n\n- Technology signals per account: tools detected on the site, tools named in job listings, recent additions and removals.\n- Your integrations, your competitors, and the tools you complement or replace.\n- ICP and tiers.\n\n## The play\n\n### 1. Classify each signal\n| Signal | Meaning | Strength |\n| --- | --- | --- |\n| Uses a tool you integrate with deeply | Lower switching effort, clear workflow story | Medium |\n| Just added a complementary tool | Building out the function now | Strong |\n| Uses a competitor, contract age unknown | Possible replacement later | Weak alone |\n| Job listing asks for experience with a competitor | Committed to it for now, or replacing it soon (read the listing) | Depends |\n| Removed a competitor or a related tool | Active change, gap may exist | Strong |\n| Uses a legacy tool you replace | Pain likely; replacement window matters | Medium |\n\n### 2. Stack with other signals\nA stack signal alone rarely justifies a message. Combine it with fit and a timing signal: a new leader, hiring, funding, or a high-intent visit.\n\n### 3. Pick the angle\n- **Integration angle**: what becomes possible when the two tools work together, with a peer example.\n- **Gap angle**: what the newly added tool does not cover that you do.\n- **Replacement angle**: only near a likely renewal or after a visible problem, and never by attacking the incumbent.\n\n### 4. Write about their world\nLead with the situation the signal implies, not the lookup itself.\n\n> Hi Dev, teams that run their outbound from the CRM usually hit the same wall: reps still research every account by hand before writing. Northwind connected their CRM and now each rep gets a researched list every morning. Is research time an issue for your team?\n\n### 5. Verify before sending\nDetection tools are wrong often enough to matter. For Tier 1 accounts, confirm the signal (careers page, docs, public case study) before naming a tool.\n\n## What good looks like\n\n- Every message works even if the tool detection was wrong.\n- Replacement plays are timed and respectful of the incumbent.\n- Stack signals are combined with fit and timing, not used alone.\n- The common mistake is \"I see you use <tool>!\" as an opener, which reads as surveillance and says nothing about the buyer's problem.\n\n## Rules\n\n- MUST combine stack signals with ICP fit before outreach.\n- MUST verify a detected tool before naming it to a Tier 1 prospect.\n- NEVER disparage a tool the prospect uses.\n- NEVER claim an integration or capability that does not exist.\n\n## Example prompts\n\n- \"Here are 300 accounts that added a sales engagement tool this quarter. Who should we contact and how?\"\n- \"Write outreach for companies whose job listings mention our competitor.\"\n- \"Build a technographic targeting plan for our integrations.\"\n",
+      "html": "<p>Use this when the tools a company runs (or stops running) change how relevant you are. The signal gives timing and a hook; the message must still be about the buyer's problem.</p>\n<h2 id=\"inputs\">Inputs</h2>\n<ul><li>Technology signals per account: tools detected on the site, tools named in job listings, recent additions and removals.</li><li>Your integrations, your competitors, and the tools you complement or replace.</li><li>ICP and tiers.</li></ul>\n<h2 id=\"the-play\">The play</h2>\n<h3 id=\"1-classify-each-signal\">1. Classify each signal</h3>\n<div class=\"md-table\"><table><thead><tr><th>Signal</th><th>Meaning</th><th>Strength</th></tr></thead><tbody><tr><td>Uses a tool you integrate with deeply</td><td>Lower switching effort, clear workflow story</td><td>Medium</td></tr><tr><td>Just added a complementary tool</td><td>Building out the function now</td><td>Strong</td></tr><tr><td>Uses a competitor, contract age unknown</td><td>Possible replacement later</td><td>Weak alone</td></tr><tr><td>Job listing asks for experience with a competitor</td><td>Committed to it for now, or replacing it soon (read the listing)</td><td>Depends</td></tr><tr><td>Removed a competitor or a related tool</td><td>Active change, gap may exist</td><td>Strong</td></tr><tr><td>Uses a legacy tool you replace</td><td>Pain likely; replacement window matters</td><td>Medium</td></tr></tbody></table></div>\n<h3 id=\"2-stack-with-other-signals\">2. Stack with other signals</h3>\n<p>A stack signal alone rarely justifies a message. Combine it with fit and a timing signal: a new leader, hiring, funding, or a high-intent visit.</p>\n<h3 id=\"3-pick-the-angle\">3. Pick the angle</h3>\n<ul><li><strong>Integration angle</strong>: what becomes possible when the two tools work together, with a peer example.</li><li><strong>Gap angle</strong>: what the newly added tool does not cover that you do.</li><li><strong>Replacement angle</strong>: only near a likely renewal or after a visible problem, and never by attacking the incumbent.</li></ul>\n<h3 id=\"4-write-about-their-world\">4. Write about their world</h3>\n<p>Lead with the situation the signal implies, not the lookup itself.</p>\n<blockquote><p>Hi Dev, teams that run their outbound from the CRM usually hit the same wall: reps still research every account by hand before writing. Northwind connected their CRM and now each rep gets a researched list every morning. Is research time an issue for your team?</p>\n</blockquote>\n<h3 id=\"5-verify-before-sending\">5. Verify before sending</h3>\n<p>Detection tools are wrong often enough to matter. For Tier 1 accounts, confirm the signal (careers page, docs, public case study) before naming a tool.</p>\n<h2 id=\"what-good-looks-like\">What good looks like</h2>\n<ul><li>Every message works even if the tool detection was wrong.</li><li>Replacement plays are timed and respectful of the incumbent.</li><li>Stack signals are combined with fit and timing, not used alone.</li><li>The common mistake is &quot;I see you use &lt;tool&gt;!&quot; as an opener, which reads as surveillance and says nothing about the buyer's problem.</li></ul>\n<h2 id=\"rules\">Rules</h2>\n<ul><li>MUST combine stack signals with ICP fit before outreach.</li><li>MUST verify a detected tool before naming it to a Tier 1 prospect.</li><li>NEVER disparage a tool the prospect uses.</li><li>NEVER claim an integration or capability that does not exist.</li></ul>\n<h2 id=\"example-prompts\">Example prompts</h2>\n<ul><li>&quot;Here are 300 accounts that added a sales engagement tool this quarter. Who should we contact and how?&quot;</li><li>&quot;Write outreach for companies whose job listings mention our competitor.&quot;</li><li>&quot;Build a technographic targeting plan for our integrations.&quot;</li></ul>\n",
+      "headings": [
+        {
+          "level": 2,
+          "id": "inputs",
+          "text": "Inputs"
+        },
+        {
+          "level": 2,
+          "id": "the-play",
+          "text": "The play"
+        },
+        {
+          "level": 3,
+          "id": "1-classify-each-signal",
+          "text": "1. Classify each signal"
+        },
+        {
+          "level": 3,
+          "id": "2-stack-with-other-signals",
+          "text": "2. Stack with other signals"
+        },
+        {
+          "level": 3,
+          "id": "3-pick-the-angle",
+          "text": "3. Pick the angle"
+        },
+        {
+          "level": 3,
+          "id": "4-write-about-their-world",
+          "text": "4. Write about their world"
+        },
+        {
+          "level": 3,
+          "id": "5-verify-before-sending",
+          "text": "5. Verify before sending"
+        },
+        {
+          "level": 2,
+          "id": "what-good-looks-like",
+          "text": "What good looks like"
+        },
+        {
+          "level": 2,
+          "id": "rules",
+          "text": "Rules"
+        },
+        {
+          "level": 2,
+          "id": "example-prompts",
+          "text": "Example prompts"
+        }
+      ],
+      "prompts": [
+        "Here are 300 accounts that added a sales engagement tool this quarter. Who should we contact and how?",
+        "Write outreach for companies whose job listings mention our competitor.",
+        "Build a technographic targeting plan for our integrations."
+      ],
+      "references": [],
+      "words": 467,
+      "updated": null
     },
     {
       "name": "value-proposition-builder",

@@ -2,9 +2,9 @@
 
 [![Validate](https://github.com/prosyo-ai/gtm-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/prosyo-ai/gtm-skill/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Skills](https://img.shields.io/badge/skills-69-8b5cf6.svg)](#the-library)
+[![Skills](https://img.shields.io/badge/skills-77-8b5cf6.svg)](#the-library)
 
-**<!-- count -->69<!-- /count --> free, open-source go-to-market skills** for AI agents: prospecting, research, buying signals, cold email, LinkedIn, deliverability, reply handling, deals, positioning, RevOps, SEO and AI search. Built and maintained by [Prosyo](https://prosyo.com), open to contributions from every GTM operator.
+**<!-- count -->77<!-- /count --> free, open-source go-to-market skills** for AI agents: prospecting, research, buying signals, cold email, LinkedIn, deliverability, reply handling, deals, positioning, RevOps, SEO and AI search. Built and maintained by [Prosyo](https://prosyo.com), open to contributions from every GTM operator.
 
 Every skill is a plain `SKILL.md` that any agent can read: Claude Code, Claude.ai, Codex, Cursor, Gemini CLI, Windsurf and the rest. Each one encodes the judgment of a good operator (what to notice first, the common mistake, what good output looks like), not just a list of steps.
 
@@ -45,7 +45,7 @@ npx skills add prosyo-ai/gtm-skill --list
 ## The library
 
 <!-- catalog:start -->
-**69 skills** across 14 categories.
+**77 skills** across 14 categories.
 
 ### Research & ICP
 
@@ -54,6 +54,7 @@ npx skills add prosyo-ai/gtm-skill --list
 | [Account research brief](skills/account-research-brief/SKILL.md) | You need to research a target company before outreach, a first call or an account plan: "research this account", "what should I know about Acme before the call", "find a reason to reach out". | `--skill account-research-brief` |
 | [Buyer persona builder](skills/buyer-persona-builder/SKILL.md) | You need B2B buyer personas that sales and marketing will actually use: before writing outreach to a new title, when messaging feels generic, or when a deal stalls because the wrong person is engaged. | `--skill buyer-persona-builder` |
 | [Competitor teardown](skills/competitor-teardown/SKILL.md) | You need to understand a competitor well enough to beat them: a deal is going head to head, a new competitor appeared, positioning needs a refresh, or reps keep losing on the same objection. | `--skill competitor-teardown` |
+| [Customer interview guide](skills/customer-interview-guide/SKILL.md) | You want to learn from customers or prospects in a structured interview: "write customer interview questions", "voice of customer research", "why did customers buy", "jobs to be done interviews". | `--skill customer-interview-guide` |
 | [ICP builder](skills/icp-builder/SKILL.md) | You need to define or sharpen an ideal customer profile (ICP) for B2B sales: starting outbound, the reply rate is low, the pipeline is full of bad-fit deals, or leadership asks who we should really sell to. | `--skill icp-builder` |
 | [Prospect research brief](skills/prospect-research-brief/SKILL.md) | You need to research a specific person before reaching out or meeting them: "look up this prospect", "what do I say to Jane", "find a personalised first line". | `--skill prospect-research-brief` |
 | [TAM, SAM and SOM calculator](skills/tam-calculator/SKILL.md) | You need a credible market size for a B2B product: a board or investor deck, territory planning, deciding which segment to attack, or checking whether outbound has enough accounts to sustain a quota. | `--skill tam-calculator` |
@@ -78,6 +79,7 @@ npx skills add prosyo-ai/gtm-skill --list
 | [Hiring signal outreach](skills/hiring-signal-outreach/SKILL.md) | A target company is hiring for roles your product supports or replaces: "they are hiring SDRs", "use job postings as a buying signal", "write outreach based on their job listing". | `--skill hiring-signal-outreach` |
 | [Job change plays](skills/job-change-plays/SKILL.md) | A contact changes jobs: a champion or happy user joins a new company, a new leader starts at a target account, or a key contact leaves a customer. | `--skill job-change-plays` |
 | [Post engagement outreach](skills/post-engagement-outreach/SKILL.md) | People engage with LinkedIn posts (yours, your team's, a competitor's or an industry voice's) and you want to turn that engagement into conversations: "reach out to people who liked our post", "warm outreach from post engagers", "turn commenters into leads". | `--skill post-engagement-outreach` |
+| [Tech stack signal outreach](skills/tech-stack-signal-outreach/SKILL.md) | A company's technology choices are a buying signal for you: "target companies using X", "they just added a tool we integrate with", "technographic outreach", "companies switching away from a competitor". | `--skill tech-stack-signal-outreach` |
 | [Website visitor follow-up](skills/website-visitor-follow-up/SKILL.md) | You know which companies visited your website and want to follow up without being creepy: "turn website visitors into meetings", "who should we contact from yesterday's visitors", "write outreach for high-intent visits". | `--skill website-visitor-follow-up` |
 
 ### Cold Email
@@ -119,6 +121,7 @@ npx skills add prosyo-ai/gtm-skill --list
 | [Deliverability audit](skills/deliverability-audit/SKILL.md) | Cold emails land in spam or reply rates suddenly drop: "audit my email deliverability", "why are my emails going to spam", "check my sending setup", "open and reply rates fell off a cliff". | `--skill deliverability-audit` |
 | [Domain warm-up plan](skills/domain-warmup-plan/SKILL.md) | You set up new domains or mailboxes for cold email and need a warm-up plan: "how do I warm up a new domain", "warm-up schedule for new inboxes", "how fast can I ramp sending". | `--skill domain-warmup-plan` |
 | [SPF, DKIM and DMARC setup](skills/email-authentication-setup/SKILL.md) | You need to set up or fix SPF, DKIM and DMARC for a sending domain: "set up SPF DKIM DMARC", "my DMARC is failing", "write my SPF record", "meet bulk sender requirements". | `--skill email-authentication-setup` |
+| [Outreach compliance check](skills/outreach-compliance-check/SKILL.md) | You need to check that cold email or LinkedIn outreach follows privacy and anti-spam rules before it goes out: "is this campaign GDPR compliant", "CAN-SPAM checklist", "can we email people in the EU", "check our cold outreach for compliance". | `--skill outreach-compliance-check` |
 | [Sending capacity planner](skills/sending-capacity-planner/SKILL.md) | You need to know how many mailboxes, domains and LinkedIn accounts a meeting target requires, or how much a team can safely send: "how many inboxes do I need", "plan our sending capacity", "can we hit 40 meetings a month". | `--skill sending-capacity-planner` |
 
 ### Replies & Meetings
@@ -138,8 +141,10 @@ npx skills add prosyo-ai/gtm-skill --list
 | [Closed-lost reactivation](skills/closed-lost-reactivation/SKILL.md) | You want to revive closed-lost deals and old opportunities: "re-engage lost deals", "win back closed lost opportunities", "reactivation campaign", "which lost deals should we try again". | `--skill closed-lost-reactivation` |
 | [Deal qualification (MEDDICC)](skills/deal-qualification/SKILL.md) | You need to qualify a B2B deal or check its health: "qualify this opportunity", "MEDDICC this deal", "is this deal real", "score my opportunity". | `--skill deal-qualification` |
 | [Mutual action plan](skills/mutual-action-plan/SKILL.md) | A B2B deal needs a shared plan to get from evaluation to signature and go-live: "build a mutual action plan", "close plan for this deal", "what are the steps to sign", "deal keeps slipping". | `--skill mutual-action-plan` |
+| [Negotiation playbook](skills/negotiation-playbook/SKILL.md) | A B2B deal reaches pricing, discount or contract negotiation: "they want 30% off", "procurement is pushing back", "how do I negotiate this renewal", "prepare for the negotiation call". | `--skill negotiation-playbook` |
 | [Pipeline review](skills/pipeline-review/SKILL.md) | A manager or founder needs to review the sales pipeline and forecast: "review my pipeline", "prep for the forecast call", "which deals are at risk", "is our quarter going to land". | `--skill pipeline-review` |
 | [Proposal follow-up](skills/proposal-follow-up/SKILL.md) | A proposal or quote has been sent and the buyer has gone quiet or is stalling: "follow up on my proposal", "they have the quote but no decision", "proposal stuck in review". | `--skill proposal-follow-up` |
+| [Sales demo script](skills/sales-demo-script/SKILL.md) | You need to plan or run a B2B product demo that moves the deal forward: "build a demo script", "prep my demo for tomorrow", "our demos are feature tours", "tailor the demo to this prospect". | `--skill sales-demo-script` |
 | [Win-loss analysis](skills/win-loss-analysis/SKILL.md) | You want to learn why deals are won and lost: "run a win-loss analysis", "why are we losing to competitor X", "analyse last quarter's closed deals", "prepare win-loss interviews". | `--skill win-loss-analysis` |
 
 ### Positioning & Messaging
@@ -174,9 +179,11 @@ npx skills add prosyo-ai/gtm-skill --list
 | Skill | What it does | Install |
 | --- | --- | --- |
 | [ABM account plan](skills/abm-account-plan/SKILL.md) | You run account-based marketing or sales on a short list of named accounts: "build an ABM plan", "account plan for our top 20", "how do we break into this enterprise account", "1:1 ABM program". | `--skill abm-account-plan` |
+| [Churn win-back](skills/churn-win-back/SKILL.md) | You want former customers back: "win back churned customers", "re-engage cancelled accounts", "churn win-back campaign", "which lost customers should we call". | `--skill churn-win-back` |
 | [Event follow-up](skills/event-follow-up/SKILL.md) | You need to turn a conference, trade show, webinar or roundtable into pipeline: "follow up with event leads", "post-webinar email", "trade show follow-up sequence", "pre-event outreach to book meetings". | `--skill event-follow-up` |
 | [Expansion opportunity finder](skills/expansion-opportunity-finder/SKILL.md) | You want to grow revenue from existing customers: "find upsell and cross-sell opportunities", "which customers are ready to expand", "net revenue retention plan", "expansion playbook". | `--skill expansion-opportunity-finder` |
 | [Referral ask](skills/referral-ask/SKILL.md) | You want introductions and referrals from happy customers, partners or your network: "ask for a referral", "get warm intros", "customer referral program", "write an introduction request". | `--skill referral-ask` |
+| [Renewal risk review](skills/renewal-risk-review/SKILL.md) | Renewals are coming up and you need to know which customers might not renew: "renewal risk review", "which accounts will churn", "prepare for renewals next quarter", "customer health check before renewal". | `--skill renewal-risk-review` |
 
 ### Enablement & Leadership
 
@@ -184,6 +191,7 @@ npx skills add prosyo-ai/gtm-skill --list
 | --- | --- | --- |
 | [Call coaching scorecard](skills/call-coaching-scorecard/SKILL.md) | A manager or rep wants feedback on sales calls: "score this call", "review my discovery call transcript", "coaching feedback for my SDR", "build a call scorecard". | `--skill call-coaching-scorecard` |
 | [GTM global rules](skills/gtm-global-rules/SKILL.md) | An agent is about to do any go-to-market work that touches real prospects, customers, a CRM, an inbox or a sending account: writing outreach, enriching lists, updating records, replying to buyers or reporting numbers. | `--skill gtm-global-rules` |
+| [Sales playbook builder](skills/sales-playbook-builder/SKILL.md) | You need a written sales playbook a team can actually follow: "build our sales playbook", "document how we sell", "playbook for new reps", "our reps all sell differently". | `--skill sales-playbook-builder` |
 | [SDR onboarding plan](skills/sdr-onboarding-plan/SKILL.md) | You hire SDRs or BDRs and need them productive fast: "30-60-90 day plan for a new SDR", "SDR onboarding program", "ramp plan for new reps", "how to train new BDRs". | `--skill sdr-onboarding-plan` |
 
 <!-- catalog:end -->
