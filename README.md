@@ -15,9 +15,10 @@ Browse the directory with search and filters at **[prosyo.com/gtm-skills](https:
 **Claude Code** (all skills, as a plugin):
 
 ```bash
-/plugin marketplace add prosyo-ai/gtm-skill
-/plugin install gtm-skills@prosyo
+/plugin install prosyo-gtm-skills --marketplace prosyo-ai/gtm-skill
 ```
+
+On Claude Code before 2.1.275: `/plugin marketplace add prosyo-ai/gtm-skill`, then `/plugin install prosyo-gtm-skills@prosyo`.
 
 **Any agent** (Claude Code, Codex, Cursor and 40+ more) with the open `skills` installer:
 
@@ -206,6 +207,7 @@ skills/
       cold-email-frameworks.md
 authors/
   prosyo.md               # who wrote it; every skill credits its author
+plugin/                   # generated Claude Code plugin (skills + manifest only); don't edit by hand
 ```
 
 - **Tool-agnostic.** Skills speak in GTM verbs ("check the CRM", "pull the list"), never vendor names, so they work on any stack.
@@ -225,7 +227,7 @@ Merged skills appear on [prosyo.com/gtm-skills](https://prosyo.com/gtm-skills/) 
 
 ## For tools and sites
 
-`catalog.json` at the repo root is a machine-readable index of every skill (metadata, rendered HTML, references, install commands). It is rebuilt by CI on every merge with `node tools/build-catalog.mjs`, and `node tools/build-covers.mjs` renders a 1200×630 cover per skill into `assets/covers/` (used as the featured image and social card on the website). Contributors don't need to run it; CI does.
+`catalog.json` at the repo root is a machine-readable index of every skill (metadata, rendered HTML, references, install commands). It is rebuilt by CI on every merge with `node tools/build-catalog.mjs`, and `node tools/build-covers.mjs` renders a 1200×630 cover per skill into `assets/covers/` (used as the featured image and social card on the website). Contributors don't need to run it; CI does. `node tools/build-plugin.mjs` regenerates `plugin/`, the folder Claude Code and Anthropic's plugin directory install.
 
 ## License
 

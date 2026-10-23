@@ -14,7 +14,7 @@ Thanks for sharing a play. The easiest route is to let your AI agent do it: past
 
 1. Fork, branch, add `skills/<skill-name>/` (and `authors/<you>.md` the first time).
 2. Run `node tools/validate.mjs` and fix everything it reports.
-3. Run `node tools/build-catalog.mjs` to refresh `catalog.json` and the README table.
+3. Run `node tools/build-catalog.mjs` and `node tools/build-plugin.mjs` to refresh `catalog.json`, the README table and the generated `plugin/` folder.
 4. Open a pull request, one skill per PR, and fill in the checklist.
 
 No git? Use the [Submit a skill issue form](https://github.com/prosyo-ai/gtm-skill/issues/new?template=submit-skill.yml).

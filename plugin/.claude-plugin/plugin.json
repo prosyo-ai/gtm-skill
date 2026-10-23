@@ -1,0 +1,23 @@
+{
+  "name": "prosyo-gtm-skills",
+  "displayName": "Prosyo GTM Skills",
+  "version": "1.1.0",
+  "description": "Open-source go-to-market skills: ICP and research, prospecting, buying signals, cold email, LinkedIn, deliverability, replies, deals, positioning, RevOps, SEO and AEO.",
+  "author": {
+    "name": "Prosyo",
+    "url": "https://prosyo.com"
+  },
+  "homepage": "https://prosyo.com/gtm-skills/",
+  "repository": "https://github.com/prosyo-ai/gtm-skill",
+  "license": "MIT",
+  "keywords": [
+    "gtm",
+    "sales",
+    "outbound",
+    "cold-email",
+    "linkedin",
+    "revops",
+    "prospecting",
+    "seo"
+  ]
+}

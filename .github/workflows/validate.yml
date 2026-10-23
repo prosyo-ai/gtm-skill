@@ -18,3 +18,6 @@ jobs:
       - name: Catalog is up to date
         if: github.event_name == 'pull_request'
         run: node tools/build-catalog.mjs --check
+      - name: Plugin folder is up to date
+        if: github.event_name == 'pull_request'
+        run: node tools/build-plugin.mjs --check

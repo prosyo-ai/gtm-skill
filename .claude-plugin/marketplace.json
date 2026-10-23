@@ -7,11 +7,14 @@
   },
   "plugins": [
     {
-      "name": "gtm-skills",
-      "source": "./",
+      "name": "prosyo-gtm-skills",
+      "source": "./plugin",
       "description": "77 go-to-market skills: research, prospecting, signals, cold email, LinkedIn, deliverability, replies, deals, positioning, RevOps, SEO and AEO.",
       "category": "sales",
       "homepage": "https://prosyo.com/gtm-skills/"
     }
-  ]
+  ],
+  "renames": {
+    "gtm-skills": "prosyo-gtm-skills"
+  }
 }

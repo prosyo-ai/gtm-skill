@@ -22,7 +22,7 @@ In Claude Code, the whole library installs as a plugin:
 
 ```
 /plugin marketplace add prosyo-ai/gtm-skill
-/plugin install gtm-skills@prosyo
+/plugin install prosyo-gtm-skills@prosyo
 ```
 
 If the user cannot run a terminal, fetch the raw files of `skills/<skill-name>/` (SKILL.md and references/) and place them in the agent's skills directory yourself. Recommend installing `gtm-global-rules` alongside any skill that touches real prospects.
@@ -93,6 +93,7 @@ Aim for a 450-800 word body plus 1-3 reference pages. No dates, no "recently", n
 ```bash
 node tools/validate.mjs
 node tools/build-catalog.mjs
+node tools/build-plugin.mjs
 ```
 
 Fix every error. CI runs both on the pull request.
@@ -103,7 +104,7 @@ Fix every error. CI runs both on the pull request.
 gh repo fork prosyo-ai/gtm-skill --clone && cd gtm-skill
 git checkout -b add-<skill-name>
 # add files, validate, build the catalog
-git add skills/<skill-name> authors/ catalog.json README.md
+git add skills/<skill-name> authors/ catalog.json README.md plugin/
 git commit -m "add <skill-name>"
 git push -u origin add-<skill-name>
 gh pr create --repo prosyo-ai/gtm-skill --title "add <skill-name>" --fill
